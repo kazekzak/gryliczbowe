@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gry Liczbowe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0D0D0D; color: #E0E0E0; }
+
+  header {
+    background: linear-gradient(135deg, #4A148C, #6A1B9A, #7B1FA2);
+    padding: 60px 20px 40px;
+    text-align: center;
+  }
+  header h1 { font-size: 2.4em; color: #fff; letter-spacing: 2px; }
+  header p  { margin-top: 12px; font-size: 1.1em; color: #CE93D8; }
+
+  nav {
+    background: #1A1A2E;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 14px;
+    border-bottom: 2px solid #4A148C;
+  }
+  nav a { color: #CE93D8; text-decoration: none; font-size: 0.95em; letter-spacing: 1px; }
+  nav a:hover { color: #fff; }
+
+  main { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+
+  section { margin-bottom: 50px; }
+  section h2 {
+    font-size: 1.4em; color: #CE93D8;
+    border-left: 4px solid #7B1FA2;
+    padding-left: 14px;
+    margin-bottom: 16px;
+  }
+  section p { line-height: 1.8; color: #BDBDBD; }
+
+  .badge {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 14px 30px;
+    background: #6A1B9A;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+  }
+  .badge:hover { background: #7B1FA2; }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    background: #1A1A2E;
+    color: #616161;
+    font-size: 0.85em;
+    border-top: 1px solid #4A148C;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>&#127922; Gry Liczbowe</h1>
+  <p>Analiza i statystyki dla graczy Eurojackpot i innych</p>
+</header>
+
+<nav>
+  <a href="#aplikacja">Aplikacja</a>
+  <a href="#prywatnosc">Polityka prywatnosci</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
+
+<main>
+
+  <section id="aplikacja">
+    <h2>O aplikacji</h2>
+    <p>
+      Eurojackpot Analiza to zaawansowana aplikacja mobilna na Androida do analizy
+      statystycznej wynikow loterii Eurojackpot. Oferuje analize czestotliwosci,
+      trendow, liczb goracych i zimnych, generowanie zakladow oraz backtest strategii.
+    </p>
+    <a class="badge" href="#">&#128241; Pobierz z Google Play</a>
+  </section>
+
+  <section id="prywatnosc">
+    <h2>Polityka prywatnosci</h2>
+    <p>
+      Aplikacja nie zbiera ani nie przesyla zadnych danych osobowych uzytkownika
+      na zewnetrzne serwery. Wszystkie dane (zaklady, historia, ustawienia) sa
+      przechowywane wylacznie lokalnie na urzadzeniu uzytkownika.<br><br>
+      Aplikacja pobiera dane wynikow loterii Eurojackpot z publicznego repozytorium
+      GitHub w celu aktualizacji bazy losowan. Nie sa zbierane zadne dane
+      identyfikujace uzytkownika.<br><br>
+      Zakup subskrypcji Premium jest obslugiwany przez Google Play - zasady
+      prywatnosci Google Play sa dostepne na stronie Google.
+    </p>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>W razie pytan lub uwag: <a href="mailto:capital2@go2.pl" style="color:#CE93D8;">capital2@go2.pl</a></p>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Gry Liczbowe &middot; kazekzak
+</footer>
+
+</body>
+</html>
