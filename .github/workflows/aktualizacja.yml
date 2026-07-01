@@ -1,0 +1,32 @@
+name: Aktualizacja EuroJackpot CSV
+
+on:
+  schedule:
+    - cron: '0 20 * * 2,5'
+  workflow_dispatch:
+
+jobs:
+  aktualizuj:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+
+      - name: Pobierz eurojackpot.csv
+        run: |
+          curl -L -o eurojackpot_nowy.csv "https://www.wynikilotto.net.pl/download/eurojackpot.csv"
+          echo "Pobrano $(wc -l < eurojackpot_nowy.csv) wierszy"
+
+      - name: Porownaj i wgraj jesli nowe dane
+        run: |
+          if diff -q eurojackpot.csv eurojackpot_nowy.csv > /dev/null 2>&1; then
+            echo "Brak nowych danych - pomijam"
+          else
+            mv eurojackpot_nowy.csv eurojackpot.csv
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add eurojackpot.csv
+            git commit -m "Aktualizacja wynikow EuroJackpot $(date '+%Y-%m-%d')"
+            git push
+            echo "Zaktualizowano!"
+          fi
