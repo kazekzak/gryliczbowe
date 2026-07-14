@@ -2,7 +2,8 @@ name: Aktualizacja EuroJackpot CSV
 
 on:
   schedule:
-    - cron: '0 20 * * 2,5'
+    - cron: '45 17 * * 2,5'
+    - cron: '45 18 * * 2,5'
   workflow_dispatch:
 
 jobs:
