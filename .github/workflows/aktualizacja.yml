@@ -20,8 +20,10 @@ jobs:
       - name: Pobierz eurojackpot.csv
         run: |
           curl -L --fail --retry 3 \
-            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" \
-            -H "Accept: text/csv,*/*" \
+            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+            -H "Accept: text/csv,text/plain,*/*" \
+            -H "Accept-Language: pl-PL,pl;q=0.9,en;q=0.8" \
+            -H "Referer: https://www.wynikilotto.net.pl/" \
             -o eurojackpot_nowy.csv \
             "https://www.wynikilotto.net.pl/download/eurojackpot.csv"
           echo "Pobrano $(wc -l < eurojackpot_nowy.csv) wierszy"
