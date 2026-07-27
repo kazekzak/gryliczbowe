@@ -1,0 +1,81 @@
+name: Aktualizacja Powerball CSV
+
+on:
+  schedule:
+    - cron: '0 10 * * 2,4,0'
+    - cron: '0 11 * * 2,4,0'
+  workflow_dispatch:
+
+jobs:
+  aktualizuj:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pobierz dane z NY State Open Data (data.ny.gov)
+        run: |
+          curl -L --fail --retry 3 \
+            -o powerball_surowe.csv \
+            "https://data.ny.gov/resource/d6yy-54nr.csv?\$limit=3000&\$order=draw_date%20ASC"
+          echo "Pobrano $(wc -l < powerball_surowe.csv) wierszy"
+
+      - name: Konwertuj do formatu apki (od 07.10.2015, obecny format 1-69 + 1-26)
+        run: |
+          python3 <<'EOF'
+          import csv
+
+          with open("powerball_surowe.csv", newline="", encoding="utf-8") as f:
+              rows = list(csv.DictReader(f))
+
+          out = []
+          idx = 0
+          for row in rows:
+              date_raw = row["draw_date"][:10]
+              if date_raw < "2015-10-07":
+                  continue
+              y, m, d = date_raw.split("-")
+              nums = [int(n) for n in row["winning_numbers"].split()]
+              main = sorted(nums[:5])
+              pb = nums[5]
+              idx += 1
+              out.append(
+                  f"{idx:04d},{d}.{m}.{y}," + ",".join(f"{n:02d}" for n in main) + f",{pb:02d}"
+              )
+
+          with open("powerball_nowy.csv", "w", encoding="utf-8", newline="\n") as f:
+              f.write("\n".join(out) + "\n")
+
+          print(f"Przekonwertowano {len(out)} losowan")
+          EOF
+
+      - name: Walidacja przekonwertowanego pliku
+        run: |
+          if ! head -1 powerball_nowy.csv | grep -q "^0001,"; then
+            echo "BLAD: plik nie zaczyna sie od danych CSV - przerywam"
+            head -5 powerball_nowy.csv
+            exit 1
+          fi
+          if [ $(wc -l < powerball_nowy.csv) -lt 1380 ]; then
+            echo "BLAD: plik podejrzanie krotki - przerywam"
+            exit 1
+          fi
+          echo "Walidacja OK"
+
+      - name: Porownaj i wgraj jesli nowe dane
+        run: |
+          if diff -q powerball.csv powerball_nowy.csv > /dev/null 2>&1; then
+            echo "Brak nowych danych - pomijam"
+          else
+            mv powerball_nowy.csv powerball.csv
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add powerball.csv
+            git commit -m "Aktualizacja wynikow Powerball $(date +%Y-%m-%d)"
+            git push
+            echo "Zaktualizowano!"
+          fi
