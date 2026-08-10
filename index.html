@@ -4,83 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gry Liczbowe</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', sans-serif; background: #0D0D0D; color: #E0E0E0; }
-
-  header {
-    background: linear-gradient(135deg, #4A148C, #6A1B9A, #7B1FA2);
-    padding: 60px 20px 40px;
-    text-align: center;
-  }
-  header h1 { font-size: 2.4em; color: #fff; letter-spacing: 2px; }
-  header p  { margin-top: 12px; font-size: 1.1em; color: #CE93D8; }
-
-  nav {
-    background: #1A1A2E;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 14px;
-    border-bottom: 2px solid #4A148C;
-    flex-wrap: wrap;
-  }
-  nav a { color: #CE93D8; text-decoration: none; font-size: 0.95em; letter-spacing: 1px; }
-  nav a:hover { color: #fff; }
-
-  main { max-width: 900px; margin: 50px auto; padding: 0 20px; }
-
-  section { margin-bottom: 50px; }
-  section h2 {
-    font-size: 1.4em; color: #CE93D8;
-    border-left: 4px solid #7B1FA2;
-    padding-left: 14px;
-    margin-bottom: 16px;
-  }
-  section h3 {
-    font-size: 1.1em; color: #E0E0E0;
-    margin: 20px 0 8px;
-  }
-  section p { line-height: 1.8; color: #BDBDBD; margin-bottom: 12px; }
-  ul { margin-left: 20px; color: #BDBDBD; line-height: 1.9; margin-bottom: 12px; }
-
-  .badge {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 14px 30px;
-    background: #6A1B9A;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1em;
-    letter-spacing: 1px;
-    transition: background 0.2s;
-  }
-  .badge:hover { background: #7B1FA2; }
-
-  .badge-stub {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 14px 30px;
-    background: #2A2A2A;
-    color: #9E9E9E;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 1em;
-    letter-spacing: 1px;
-    border: 1px dashed #555;
-  }
-
-  footer {
-    text-align: center;
-    padding: 30px;
-    background: #1A1A2E;
-    color: #616161;
-    font-size: 0.85em;
-    border-top: 1px solid #4A148C;
-  }
-</style>
+<link rel="stylesheet" href="wspolne.css">
 </head>
 <body>
 
@@ -90,149 +14,45 @@
 </header>
 
 <nav>
-  <a href="#eurojackpot">EuroJackpot</a>
-  <a href="#duzylotek">Du&#380;y Lotek</a>
-  <a href="#powerball">Powerball</a>
-  <a href="#eurojackcoin">EuroJackCoin</a>
-  <a href="#prywatnosc">Polityka prywatno&#347;ci</a>
-  <a href="#kontakt">Kontakt</a>
+  <a href="index.html" class="aktywny">Strona g&#322;&oacute;wna</a>
+  <a href="eurojackpot.html">EuroJackpot</a>
+  <a href="duzylotek.html">Du&#380;y Lotek</a>
+  <a href="powerball.html">Powerball</a>
+  <a href="eurojackcoin.html">EuroJackCoin</a>
 </nav>
 
 <main>
+  <div class="karty">
 
-  <section id="eurojackpot">
-    <h2>EuroJackpot Analiza</h2>
-    <p>
-      Zaawansowana aplikacja mobilna na Androida do analizy statystycznej loterii EuroJackpot (5 z 50 + 2 z 12).
-      Zawiera baz&#281; ponad 970 historycznych losowan i dzia&#322;a w trybie offline.
-    </p>
+    <a class="karta" href="eurojackpot.html">
+      <h2>EuroJackpot Analiza</h2>
+      <p>Statystyki, generowanie zak&#322;ad&#243;w i symulacje dla loterii EuroJackpot (5 z 50 + 2 z 12).</p>
+      <span class="status gotowe">&#9989; Dost&#281;pne w Google Play</span>
+    </a>
 
-    <h3>&#128202; Analiza statystyczna</h3>
-    <ul>
-      <li>Liczby gor&#261;ce i zimne — 4 metody obliczania: cz&#281;stotliwo&#347;&#263;, wa&#380;ona, okno czasowe, percentyl</li>
-      <li>Liczby zaleg&#322;e — najd&#322;u&#380;ej nieobecne w losowaniach</li>
-      <li>Trendy — liczby zyskuj&#261;ce i trac&#261;ce popularno&#347;&#263;</li>
-      <li>Nast&#281;pstwa — analiza par&#281; po liczbie</li>
-      <li>Korelacje — pary liczb wyst&#281;puj&#261;cych razem</li>
-      <li>Analiza krzy&#380;owa — zestaw dowolne dwie metody analizy naraz</li>
-      <li>Sumy, struktury parzysto&#347;ci, siec neuronowa</li>
-    </ul>
+    <a class="karta" href="duzylotek.html">
+      <h2>Du&#380;y Lotek Analiza</h2>
+      <p>Ten sam silnik analityczny, dla loterii Du&#380;y Lotek (6 z 49).</p>
+      <span class="status">&#128679; Wkr&#243;tce</span>
+    </a>
 
-    <h3>&#127918; Generowanie zak&#322;ad&#243;w</h3>
-    <ul>
-      <li>Strategie: Gor&#261;ce, Zimne, Zaleg&#322;e, Synteza, Losowy</li>
-      <li>System pe&#322;ny i skr&#243;cony (kombinacje C(n,5))</li>
-      <li>Pewniaki — wymu&#347; ulubione liczby</li>
-      <li>W&#322;asne liczby — wpisz r&#281;cznie</li>
-      <li>Broker Statystyczny — 5 profili: bezpieczna, zr&#243;wnowa&#380;ona, agresywna, predykcyjna i <strong>Random Forest</strong> (g&#322;osowanie kilku niezale&#380;nych metod)</li>
-    </ul>
+    <a class="karta" href="powerball.html">
+      <h2>Powerball Analiza</h2>
+      <p>Ten sam silnik analityczny, dla ameryka&#324;skiej loterii Powerball.</p>
+      <span class="status">&#128679; Wkr&#243;tce</span>
+    </a>
 
-    <h3>&#128300; Symulacje</h3>
-    <ul>
-      <li>Monte Carlo — symulacja milion&#243;w losowan</li>
-      <li>Backtest — historyczna ocena skuteczno&#347;ci metod, z dok&#322;adnym dostrajaniem zakresu losowan</li>
-      <li>Scoring AI — predykcja z wa&#380;onymi czynnikami</li>
-    </ul>
+    <a class="karta" href="eurojackcoin.html">
+      <h2>EuroJackCoin</h2>
+      <p>Autorska, edukacyjna kryptowaluta i sie&#263; peer-to-peer napisana od zera w C++.</p>
+      <span class="status">&#128679; Wkr&#243;tce</span>
+    </a>
 
-    <h3>&#128203; Zarz&#261;dzanie zak&#322;adami</h3>
-    <ul>
-      <li>Zapis, historia i por&#243;wnanie zak&#322;ad&#243;w</li>
-      <li>Test historyczny — sprawdz ile by&#322;oby trafen w przesz&#322;osci</li>
-      <li>Historia 970+ losowan EuroJackpot</li>
-    </ul>
-
-    <a class="badge" href="#">&#128241; Pobierz z Google Play</a>
-  </section>
-
-  <section id="duzylotek">
-    <h2>Du&#380;y Lotek Analiza</h2>
-    <p>
-      Aplikacja mobilna do analizy statystycznej loterii Du&#380;y Lotek (6 z 49), budowana na tym samym
-      silniku analitycznym co EuroJackpot Analiza.
-    </p>
-    <span class="badge-stub">&#128679; Wkr&#243;tce</span>
-  </section>
-
-  <section id="powerball">
-    <h2>Powerball Analiza</h2>
-    <p>
-      Aplikacja mobilna do analizy statystycznej ameryka&#324;skiej loterii Powerball, budowana na tym samym
-      silniku analitycznym co EuroJackpot Analiza.
-    </p>
-    <span class="badge-stub">&#128679; Wkr&#243;tce</span>
-  </section>
-
-  <section id="eurojackcoin">
-    <h2>EuroJackCoin</h2>
-    <p>
-      Autorska, edukacyjna kryptowaluta i sie&#263; peer-to-peer napisana od zera w C++ &mdash; w&#322;asny
-      &#322;a&#324;cuch blok&#243;w, portfele z kluczami Ed25519, kopanie i propagacja transakcji mi&#281;dzy
-      w&#281;z&#322;ami w sieci.
-    </p>
-    <span class="badge-stub">&#128679; Wkr&#243;tce</span>
-  </section>
-
-  <section id="prywatnosc">
-    <h2>Polityka prywatno&#347;ci</h2>
-    <p>Data ostatniej aktualizacji: 19 lipca 2026 r.</p>
-
-    <h3>1. Zbieranie danych</h3>
-    <p>
-      Aplikacja <strong>EuroJackpot Analiza</strong> nie zbiera, nie przetwarza ani nie przesy&#322;a
-      &#380;adnych danych osobowych u&#380;ytkownika na zewn&#281;trzne serwery.
-    </p>
-
-    <h3>2. Dane przechowywane lokalnie</h3>
-    <p>Wszystkie dane s&#261; przechowywane wy&#322;&#261;cznie na urz&#261;dzeniu u&#380;ytkownika:</p>
-    <ul>
-      <li>Zapisane zak&#322;ady i typy liczbowe</li>
-      <li>Baza historycznych losowan EuroJackpot</li>
-      <li>Ustawienia aplikacji</li>
-    </ul>
-    <p>Odinstalowanie aplikacji trwale usuwa wszystkie te dane.</p>
-
-    <h3>3. Aktualizacja bazy losowan (funkcja Premium)</h3>
-    <p>
-      Funkcja aktualizacji bazy danych pobiera plik CSV z wynikami losowan z publicznego
-      &#378;r&#243;d&#322;a internetowego. Po&#322;&#261;czenie nawi&#261;zywane jest wy&#322;&#261;cznie na &#380;&#261;danie u&#380;ytkownika.
-      Nie s&#261; zbierane &#380;adne dane identyfikuj&#261;ce u&#380;ytkownika podczas tego po&#322;&#261;czenia.
-    </p>
-
-    <h3>4. Zakupy w aplikacji</h3>
-    <p>
-      Zakup subskrypcji Premium jest obs&#322;ugiwany przez Google Play.
-      Aplikacja nie przetwarza ani nie przechowuje danych p&#322;atno&#347;ci.
-      Zasady prywatno&#347;ci Google Play dost&#281;pne s&#261; pod adresem:
-      <a href="https://policies.google.com/privacy" style="color:#CE93D8;">policies.google.com/privacy</a>
-    </p>
-
-    <h3>5. Uprawnienia aplikacji</h3>
-    <ul>
-      <li><strong>INTERNET</strong> — wy&#322;&#261;cznie do aktualizacji bazy losowan (Premium)</li>
-    </ul>
-
-    <h3>6. Planowane zmiany (reklamy)</h3>
-    <p>
-      W kolejnej aktualizacji planujemy wprowadzi&#263; reklamy (Google AdMob) w bezp&#322;atnej
-      wersji aplikacji. Gdy to nast&#261;pi, ta polityka prywatno&#347;ci zostanie zaktualizowana
-      i b&#281;dzie okre&#347;la&#263; jakie dane (np. identyfikator reklamowy urz&#261;dzenia) b&#281;d&#261;
-      wtedy przetwarzane przez Google AdMob.
-    </p>
-
-    <h3>7. Kontakt</h3>
-    <p>
-      W sprawie polityki prywatno&#347;ci: <a href="mailto:capital2@go2.pl" style="color:#CE93D8;">capital2@go2.pl</a>
-    </p>
-  </section>
-
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>W razie pyta&#324; lub uwag: <a href="mailto:capital2@go2.pl" style="color:#CE93D8;">capital2@go2.pl</a></p>
-  </section>
-
+  </div>
 </main>
 
 <footer>
+  Kontakt: <a href="mailto:capital2@go2.pl">capital2@go2.pl</a><br>
   &copy; 2026 Gry Liczbowe &middot; kazekzak
 </footer>
 
