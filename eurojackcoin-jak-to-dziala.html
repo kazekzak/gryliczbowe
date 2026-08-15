@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EuroJackCoin &middot; Jak to dzia&#322;a &middot; Gry Liczbowe</title>
+<link rel="stylesheet" href="wspolne.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html">&#127922; Gry Liczbowe</a></h1>
+  <p>Analiza i statystyki dla gier liczbowych</p>
+</header>
+
+<nav>
+  <a href="index.html">Strona g&#322;&oacute;wna</a>
+  <a href="eurojackpot.html">EuroJackpot</a>
+  <a href="duzylotek.html">Du&#380;y Lotek</a>
+  <a href="powerball.html">Powerball</a>
+  <a href="eurojackcoin.html" class="aktywny">EuroJackCoin</a>
+</nav>
+
+<main>
+
+  <section id="jak-to-dziala">
+    <h2>Jak to dzia&#322;a</h2>
+    <p>
+      Krótki przewodnik po aplikacji &mdash; co robi ka&#380;da zak&#322;adka i jakich poj&#281;&#263; u&#380;ywa.
+      Wracasz na g&#322;&oacute;wn&#261; stron&#281; EuroJackCoin: <a href="eurojackcoin.html" style="color:#CE93D8;">tutaj</a>.
+    </p>
+
+    <h3>&#128273; Klucz publiczny i saldo (zak&#322;adka Przegl&#261;d)</h3>
+    <p>
+      Przy pierwszym uruchomieniu apka sama generuje Tw&#243;j <strong>portfel</strong> &mdash; par&#281; kluczy
+      kryptograficznych (Ed25519). <strong>Klucz publiczny</strong> to Tw&#243;j "numer konta" &mdash; mo&#380;esz
+      go bezpiecznie udost&#281;pnia&#263; komukolwiek, kto ma Ci wys&#322;a&#263; monety. Drugiej po&#322;owy pary
+      (klucza prywatnego) apka nigdy nikomu nie pokazuje &mdash; to nim s&#261; podpisywane Twoje transakcje.
+    </p>
+    <p>
+      <strong>Saldo</strong> nie jest nigdzie zapisane wprost &mdash; za ka&#380;dym razem jest przeliczane od nowa
+      na podstawie ca&#322;ej historii transakcji w &#322;a&#324;cuchu bloków.
+    </p>
+
+    <h3>&#9935;&#65039; Kopanie</h3>
+    <p>
+      "Kopanie" to dopisywanie nowego bloku do &#322;a&#324;cucha. Kto kopie blok, dostaje za to nagrod&#281; w
+      EJC &mdash; tak samo jak w prawdziwym Bitcoinie. S&#261; dwa tryby:
+    </p>
+    <ul>
+      <li><strong>Kop blok</strong> &mdash; wykopuje jeden blok i ko&#324;czy.</li>
+      <li><strong>Kop w p&#281;tli</strong> &mdash; kopie bloki jeden po drugim, bez przerwy, a&#380; klikniesz "Zatrzymaj kopanie".</li>
+    </ul>
+
+    <h3>&#128184; Wysy&#322;anie (zak&#322;adka Wy&#347;lij)</h3>
+    <p>
+      Wpisujesz klucz publiczny odbiorcy i kwot&#281;. Je&#347;li odbiorca jest ju&#380; znanym w&#281;z&#322;em w
+      sieci, mo&#380;esz go wybra&#263; z listy <strong>Znany odbiorca</strong> zamiast wklejac klucz r&#281;cznie.
+      Transakcja trafia do nowego bloku (razem z Tw&#261; nagrod&#261; za jego wykopanie) i jest rozg&#322;aszana
+      do znanych w&#281;z&#322;ów w sieci.
+    </p>
+
+    <h3>&#128229; Odebrane</h3>
+    <p>Lista transakcji, w kt&#243;rych to Ty by&#322;e&#347;/a&#347; odbiorc&#261;.</p>
+
+    <h3>&#128279; &#321;a&#324;cuch</h3>
+    <p>
+      Pe&#322;na historia wszystkich wykopanych blok&#243;w &mdash; ka&#380;dy blok wskazuje na poprzedni, wi&#281;c
+      cofni&#281;cie czy podmiana czegokolwiek w &#347;rodku od razu psuje ca&#322;y &#322;a&#324;cuch dalej (dlatego
+      blockchain trudno sfa&#322;szowa&#263;).
+    </p>
+
+    <h3>&#127760; Sie&#263; (zak&#322;adka Sie&#263;)</h3>
+    <p>Tu dzieje si&#281; ca&#322;a magia sieci peer-to-peer:</p>
+    <ul>
+      <li><strong>Nas&#322;uchuj</strong> &mdash; uruchamia Tw&#243;j w&#281;ze&#322;, &#380;eby inni mogli si&#281; z Tob&#261; po&#322;&#261;czy&#263;.</li>
+      <li><strong>Znane w&#281;z&#322;y</strong> &mdash; lista komputer&#243;w, kt&#243;re Twoja apka ju&#380; poznaje (w tej samej sieci lokalnej &mdash; automatycznie; spoza niej &mdash; trzeba doda&#263; r&#281;cznie po adresie IP).</li>
+      <li><strong>Seedy</strong> &mdash; sta&#322;e, zaufane punkty startowe. Wystarczy doda&#263; JEDEN seed, &#380;eby przez niego pozna&#263; ca&#322;&#261; reszt&#281; sieci, kt&#243;r&#261; on ju&#380; zna (dok&#322;adnie tak, jak dzia&#322;aj&#261; "DNS seedy" w prawdziwym Bitcoinie).</li>
+      <li><strong>Rozg&#322;o&#347; teraz</strong> &mdash; r&#281;cznie wysy&#322;a Tw&#243;j &#322;a&#324;cuch do wszystkich znanych w&#281;z&#322;&#243;w, na wypadek gdyby automat czegos nie z&#322;apa&#322;.</li>
+    </ul>
+    <p>
+      Zasada dzia&#322;ania sieci: <strong>najd&#322;u&#380;szy poprawny &#322;a&#324;cuch wygrywa</strong> &mdash;
+      dok&#322;adnie jak w Bitcoinie. Z jednym zastrze&#380;eniem specjalnie dodanym w tej apce: nowy &#322;a&#324;cuch
+      NIGDY nie zostanie przyj&#281;ty, je&#347;li zmniejszy&#322;by Twoje w&#322;asne saldo &mdash; wi&#281;c Twoje
+      wykopane/otrzymane monety s&#261; bezpieczne.
+    </p>
+
+    <h3>&#128225; Jak skonfigurowa&#263; sie&#263;</h3>
+    <p>
+      <strong>W tej samej sieci lokalnej (ten sam WiFi/router)</strong> &mdash; nic nie trzeba robi&#263;.
+      Wystarczy klikn&#261;&#263; "Nas&#322;uchuj" na obu komputerach, a apka znajdzie drugi komputer sama.
+    </p>
+    <p>
+      <strong>Spoza sieci lokalnej (inny dom, inny internet)</strong> &mdash; automatyczne wykrywanie NIE
+      dzia&#322;a (fizyczne ograniczenie tej technologii, nie ustawienie do w&#322;&#261;czenia). Trzeba:
+    </p>
+    <ul>
+      <li>Pozna&#263; <strong>publiczny adres IP</strong> tamtej sieci &mdash; na tamtym komputerze wystarczy wyszuka&#263; w Google "jaki jest m&#243;j adres ip". Sam adres lokalny z <code>ipconfig</code> (np. 192.168.x.x) nie wystarczy &mdash; taki numer powtarza si&#281; w ka&#380;dym domu na &#347;wiecie.</li>
+      <li>Zrobi&#263; <strong>przekierowanie portu</strong> na routerze tamtej sieci (Port Forwarding / Virtual Server / NAT) &mdash; port, na kt&#243;rym apka nas&#322;uchuje (domy&#347;lnie 1700), skierowany na lokalny adres tego konkretnego komputera.</li>
+      <li>Ustawi&#263; temu komputerowi <strong>sta&#322;y lokalny adres</strong> w routerze, &#380;eby przekierowanie nie przesta&#322;o dzia&#322;a&#263; po zmianie adresu.</li>
+      <li>Dopiero teraz drugi u&#380;ytkownik mo&#380;e doda&#263; ten publiczny adres jako <strong>Seed</strong> (zak&#322;adka Sie&#263;) i przez niego wej&#347;&#263; do ca&#322;ej reszty sieci.</li>
+    </ul>
+    <p>
+      <strong>Alternatywa bez przekierowywania port&#243;w:</strong> <em>ZeroTier</em> albo <em>Hamachi</em> na
+      obu komputerach &mdash; tworz&#261; wsp&#243;ln&#261; wirtualn&#261; sie&#263;, dzia&#322;a to jak bycie w tym
+      samym WiFi, bez &#380;adnej konfiguracji routera.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Kontakt: <a href="mailto:capital2@go2.pl">capital2@go2.pl</a><br>
+  &copy; 2026 Gry Liczbowe &middot; kazekzak
+</footer>
+
+</body>
+</html>
