@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EuroJackCoin &middot; Comment &#231;a marche &middot; Gry Liczbowe</title>
+<meta name="description" content="Comment fonctionne EuroJackCoin — explication du m&#233;canisme d'une cryptomonnaie originale et d'un r&#233;seau pair-&#224;-pair &#233;crits de z&#233;ro en C++.">
+<link rel="canonical" href="https://gryliczbowe.com/fr/eurojackcoin-comment-ca-marche.html">
+<link rel="alternate" hreflang="pl" href="https://gryliczbowe.com/eurojackcoin-jak-to-dziala.html">
+<link rel="alternate" hreflang="en" href="https://gryliczbowe.com/en/eurojackcoin-how-it-works.html">
+<link rel="alternate" hreflang="de" href="https://gryliczbowe.com/de/eurojackcoin-funktionsweise.html">
+<link rel="alternate" hreflang="fr" href="https://gryliczbowe.com/fr/eurojackcoin-comment-ca-marche.html">
+<link rel="alternate" hreflang="it" href="https://gryliczbowe.com/it/eurojackcoin-come-funziona.html">
+<link rel="alternate" hreflang="x-default" href="https://gryliczbowe.com/eurojackcoin-jak-to-dziala.html">
+<meta property="og:title" content="EuroJackCoin — comment &#231;a marche">
+<meta property="og:description" content="Explication du m&#233;canisme d'une cryptomonnaie originale et d'un r&#233;seau pair-&#224;-pair &#233;crits de z&#233;ro en C++.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gryliczbowe.com/fr/eurojackcoin-comment-ca-marche.html">
+<link rel="stylesheet" href="../wspolne.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html">&#127922; Gry Liczbowe</a></h1>
+  <p>Analyse et statistiques pour les jeux de nombres</p>
+</header>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="eurojackpot.html">EuroJackpot</a>
+  <a href="duzylotek.html">Du&#380;y Lotek</a>
+  <a href="powerball.html">Powerball</a>
+  <a href="eurojackcoin.html" class="aktywny">EuroJackCoin</a>
+</nav>
+
+<div class="langi">
+  <a href="../eurojackcoin-jak-to-dziala.html">&#127477;&#127473;</a>
+  <a href="../en/eurojackcoin-how-it-works.html">&#127468;&#127463;</a>
+  <a href="../de/eurojackcoin-funktionsweise.html">&#127465;&#127466;</a>
+  <a href="eurojackcoin-comment-ca-marche.html" class="aktywny">&#127467;&#127479;</a>
+  <a href="../it/eurojackcoin-come-funziona.html">&#127470;&#127481;</a>
+</div>
+
+<main>
+
+  <section id="jak-to-dziala">
+    <h2>Comment &#231;a marche</h2>
+    <p>
+      Un guide rapide de l'application &mdash; ce que fait chaque onglet et les concepts qu'il utilise.
+      Retour &#224; la page principale EuroJackCoin : <a href="eurojackcoin.html" style="color:#CE93D8;">ici</a>.
+    </p>
+
+    <h3>&#128273; Cl&#233; publique et solde (onglet Aper&#231;u)</h3>
+    <p>
+      Au premier lancement, l'application g&#233;n&#232;re automatiquement votre <strong>portefeuille</strong>
+      &mdash; une paire de cl&#233;s cryptographiques (Ed25519). La <strong>cl&#233; publique</strong> est
+      votre "num&#233;ro de compte" &mdash; vous pouvez la partager en toute s&#233;curit&#233; avec quiconque
+      doit vous envoyer des pi&#232;ces. L'autre moiti&#233; de la paire (la cl&#233; priv&#233;e) n'est jamais
+      montr&#233;e &#224; personne &mdash; c'est avec elle que vos transactions sont sign&#233;es.
+    </p>
+    <p>
+      Votre <strong>solde</strong> n'est stock&#233; nulle part directement &mdash; il est recalcul&#233;
+      &#224; chaque fois &#224; partir de tout l'historique des transactions dans la blockchain.
+    </p>
+
+    <h3>&#9935;&#65039; Minage</h3>
+    <p>
+      "Miner" signifie ajouter un nouveau bloc &#224; la cha&#238;ne. Celui qui mine un bloc re&#231;oit une
+      r&#233;compense en EJC &mdash; exactement comme sur le vrai Bitcoin. Il existe deux modes :
+    </p>
+    <ul>
+      <li><strong>Miner un bloc</strong> &mdash; mine un seul bloc puis s'arr&#234;te.</li>
+      <li><strong>Miner en boucle</strong> &mdash; mine les blocs les uns apr&#232;s les autres, sans interruption, jusqu'&#224; ce que vous cliquiez sur "Arr&#234;ter le minage".</li>
+    </ul>
+
+    <h3>&#128184; Envoi (onglet Envoyer)</h3>
+    <p>
+      Vous saisissez la cl&#233; publique du destinataire et le montant. Si le destinataire est d&#233;j&#224;
+      un n&#339;ud connu du r&#233;seau, vous pouvez le choisir dans la liste <strong>Destinataire
+      connu</strong> au lieu de coller la cl&#233; manuellement. La transaction entre dans un nouveau bloc
+      (avec votre r&#233;compense pour l'avoir min&#233;) et est diffus&#233;e aux n&#339;uds connus du r&#233;seau.
+    </p>
+
+    <h3>&#128229; Re&#231;us</h3>
+    <p>Liste des transactions o&#249; vous &#233;tiez le destinataire.</p>
+
+    <h3>&#128279; Cha&#238;ne</h3>
+    <p>
+      L'historique complet de tous les blocs min&#233;s &mdash; chaque bloc pointe vers le pr&#233;c&#233;dent,
+      donc annuler ou modifier quoi que ce soit &#224; l'int&#233;rieur casse imm&#233;diatement toute la
+      cha&#238;ne apr&#232;s ce point (c'est pourquoi la blockchain est difficile &#224; falsifier).
+    </p>
+
+    <h3>&#127760; R&#233;seau (onglet R&#233;seau)</h3>
+    <p>C'est ici que se passe toute la magie du r&#233;seau pair-&#224;-pair :</p>
+    <ul>
+      <li><strong>&#201;couter</strong> &mdash; d&#233;marre votre n&#339;ud pour que d'autres puissent se connecter &#224; vous.</li>
+      <li><strong>N&#339;uds connus</strong> &mdash; liste des ordinateurs que votre application conna&#238;t d&#233;j&#224; (sur le m&#234;me r&#233;seau local &mdash; automatiquement ; en dehors &mdash; il faut les ajouter manuellement par adresse IP).</li>
+      <li><strong>Seeds</strong> &mdash; points de d&#233;part fixes et fiables. Il suffit d'ajouter UN seul seed pour d&#233;couvrir, via lui, tout le reste du r&#233;seau qu'il conna&#238;t d&#233;j&#224; (exactement comme fonctionnent les "seeds DNS" sur le vrai Bitcoin).</li>
+      <li><strong>Diffuser maintenant</strong> &mdash; envoie manuellement votre cha&#238;ne &#224; tous les n&#339;uds connus, au cas o&#249; l'automatisme aurait manqu&#233; quelque chose.</li>
+    </ul>
+    <p>
+      La r&#232;gle du r&#233;seau : <strong>la cha&#238;ne valide la plus longue gagne</strong> &mdash;
+      exactement comme sur Bitcoin. Avec une garantie suppl&#233;mentaire ajout&#233;e sp&#233;cialement dans
+      cette application : une nouvelle cha&#238;ne ne sera JAMAIS accept&#233;e si elle devait diminuer votre
+      propre solde &mdash; vos pi&#232;ces min&#233;es/re&#231;ues sont donc en s&#233;curit&#233;.
+    </p>
+
+    <h3>&#128225; Comment configurer le r&#233;seau</h3>
+    <p>
+      <strong>Sur le m&#234;me r&#233;seau local (m&#234;me WiFi/routeur)</strong> &mdash; rien &#224; faire.
+      Il suffit de cliquer sur "&#201;couter" sur les deux ordinateurs, et l'application trouvera l'autre
+      ordinateur toute seule.
+    </p>
+    <p>
+      <strong>En dehors du r&#233;seau local (autre domicile, autre internet)</strong> &mdash; la
+      d&#233;tection automatique NE fonctionne PAS (une limitation physique de cette technologie, pas un
+      param&#232;tre &#224; activer). Il faut :
+    </p>
+    <ul>
+      <li>Conna&#238;tre l'<strong>adresse IP publique</strong> de ce r&#233;seau &mdash; sur cet ordinateur, il suffit de rechercher sur Google "quelle est mon adresse ip". Une adresse locale obtenue avec <code>ipconfig</code> (ex. 192.168.x.x) ne suffit pas &mdash; ce num&#233;ro se r&#233;p&#232;te dans chaque foyer du monde.</li>
+      <li>Faire une <strong>redirection de port</strong> sur le routeur de ce r&#233;seau (Port Forwarding / Virtual Server / NAT) &mdash; le port sur lequel l'application &#233;coute (1700 par d&#233;faut), dirig&#233; vers l'adresse locale de cet ordinateur en particulier.</li>
+      <li>D&#233;finir une <strong>adresse locale fixe</strong> pour cet ordinateur dans le routeur, pour que la redirection ne cesse pas de fonctionner apr&#232;s un changement d'adresse.</li>
+      <li>Ce n'est qu'&#224; ce moment que l'autre utilisateur peut ajouter cette adresse publique comme <strong>Seed</strong> (onglet R&#233;seau) et l'utiliser pour acc&#233;der au reste du r&#233;seau.</li>
+    </ul>
+    <p>
+      <strong>Alternative sans redirection de port :</strong> <em>ZeroTier</em> ou <em>Hamachi</em> sur les
+      deux ordinateurs &mdash; ils cr&#233;ent un r&#233;seau virtuel partag&#233;, ce qui fonctionne comme
+      si vous &#233;tiez sur le m&#234;me WiFi, sans aucune configuration de routeur.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Contact : <a href="mailto:capital2@go2.pl">capital2@go2.pl</a><br>
+  &copy; 2026 Gry Liczbowe &middot; kazekzak
+</footer>
+
+</body>
+</html>

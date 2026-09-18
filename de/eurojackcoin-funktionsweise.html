@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EuroJackCoin &middot; Wie es funktioniert &middot; Gry Liczbowe</title>
+<meta name="description" content="Wie EuroJackCoin funktioniert — Erkl&#228;rung der Mechanik einer eigenen Kryptow&#228;hrung und Peer-to-Peer-Netzwerk, von Grund auf in C++ geschrieben.">
+<link rel="canonical" href="https://gryliczbowe.com/de/eurojackcoin-funktionsweise.html">
+<link rel="alternate" hreflang="pl" href="https://gryliczbowe.com/eurojackcoin-jak-to-dziala.html">
+<link rel="alternate" hreflang="en" href="https://gryliczbowe.com/en/eurojackcoin-how-it-works.html">
+<link rel="alternate" hreflang="de" href="https://gryliczbowe.com/de/eurojackcoin-funktionsweise.html">
+<link rel="alternate" hreflang="fr" href="https://gryliczbowe.com/fr/eurojackcoin-comment-ca-marche.html">
+<link rel="alternate" hreflang="it" href="https://gryliczbowe.com/it/eurojackcoin-come-funziona.html">
+<link rel="alternate" hreflang="x-default" href="https://gryliczbowe.com/eurojackcoin-jak-to-dziala.html">
+<meta property="og:title" content="EuroJackCoin — wie es funktioniert">
+<meta property="og:description" content="Erkl&#228;rung der Mechanik einer eigenen Kryptow&#228;hrung und Peer-to-Peer-Netzwerk, von Grund auf in C++ geschrieben.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gryliczbowe.com/de/eurojackcoin-funktionsweise.html">
+<link rel="stylesheet" href="../wspolne.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html">&#127922; Gry Liczbowe</a></h1>
+  <p>Analyse und Statistik f&#252;r Zahlenspiele</p>
+</header>
+
+<nav>
+  <a href="index.html">Startseite</a>
+  <a href="eurojackpot.html">EuroJackpot</a>
+  <a href="duzylotek.html">Du&#380;y Lotek</a>
+  <a href="powerball.html">Powerball</a>
+  <a href="eurojackcoin.html" class="aktywny">EuroJackCoin</a>
+</nav>
+
+<div class="langi">
+  <a href="../eurojackcoin-jak-to-dziala.html">&#127477;&#127473;</a>
+  <a href="../en/eurojackcoin-how-it-works.html">&#127468;&#127463;</a>
+  <a href="eurojackcoin-funktionsweise.html" class="aktywny">&#127465;&#127466;</a>
+  <a href="../fr/eurojackcoin-comment-ca-marche.html">&#127467;&#127479;</a>
+  <a href="../it/eurojackcoin-come-funziona.html">&#127470;&#127481;</a>
+</div>
+
+<main>
+
+  <section id="jak-to-dziala">
+    <h2>Wie es funktioniert</h2>
+    <p>
+      Eine kurze Anleitung zur App &mdash; was jeder Tab macht und welche Begriffe verwendet werden.
+      Zur&#252;ck zur EuroJackCoin-Hauptseite: <a href="eurojackcoin.html" style="color:#CE93D8;">hier</a>.
+    </p>
+
+    <h3>&#128273; &#214;ffentlicher Schl&#252;ssel und Guthaben (Tab &#220;bersicht)</h3>
+    <p>
+      Beim ersten Start generiert die App automatisch deine <strong>Wallet</strong> &mdash; ein Paar
+      kryptografischer Schl&#252;ssel (Ed25519). Der <strong>&#246;ffentliche Schl&#252;ssel</strong> ist
+      deine "Kontonummer" &mdash; du kannst ihn sicher mit jedem teilen, der dir M&#252;nzen schicken soll.
+      Die andere H&#228;lfte des Paares (der private Schl&#252;ssel) wird niemandem gezeigt &mdash; mit ihm
+      werden deine Transaktionen signiert.
+    </p>
+    <p>
+      Dein <strong>Guthaben</strong> wird nirgends direkt gespeichert &mdash; es wird jedes Mal neu
+      berechnet, basierend auf der gesamten Transaktionshistorie in der Blockchain.
+    </p>
+
+    <h3>&#9935;&#65039; Mining</h3>
+    <p>
+      "Mining" bedeutet, einen neuen Block an die Kette anzuh&#228;ngen. Wer einen Block mint, erh&#228;lt
+      daf&#252;r eine EJC-Belohnung &mdash; genau wie bei echtem Bitcoin. Es gibt zwei Modi:
+    </p>
+    <ul>
+      <li><strong>Block minen</strong> &mdash; mint einen einzelnen Block und stoppt dann.</li>
+      <li><strong>In Schleife minen</strong> &mdash; mint Bl&#246;cke nacheinander, ohne Pause, bis du auf "Mining stoppen" klickst.</li>
+    </ul>
+
+    <h3>&#128184; Senden (Tab Senden)</h3>
+    <p>
+      Du gibst den &#246;ffentlichen Schl&#252;ssel des Empf&#228;ngers und den Betrag ein. Wenn der
+      Empf&#228;nger bereits ein bekannter Knoten im Netzwerk ist, kannst du ihn aus der Liste
+      <strong>Bekannter Empf&#228;nger</strong> ausw&#228;hlen, statt den Schl&#252;ssel manuell einzuf&#252;gen.
+      Die Transaktion gelangt in einen neuen Block (zusammen mit deiner Belohnung f&#252;rs Minen) und wird
+      an bekannte Knoten im Netzwerk verbreitet.
+    </p>
+
+    <h3>&#128229; Empfangen</h3>
+    <p>Liste der Transaktionen, bei denen du der Empf&#228;nger warst.</p>
+
+    <h3>&#128279; Kette</h3>
+    <p>
+      Die vollst&#228;ndige Historie aller geminten Bl&#246;cke &mdash; jeder Block verweist auf den
+      vorherigen, sodass das R&#252;ckg&#228;ngigmachen oder &#196;ndern von etwas darin sofort die gesamte
+      Kette ab diesem Punkt zerst&#246;rt (deshalb ist Blockchain schwer zu f&#228;lschen).
+    </p>
+
+    <h3>&#127760; Netzwerk (Tab Netzwerk)</h3>
+    <p>Hier passiert die ganze Magie des Peer-to-Peer-Netzwerks:</p>
+    <ul>
+      <li><strong>Zuh&#246;ren</strong> &mdash; startet deinen Knoten, damit sich andere mit dir verbinden k&#246;nnen.</li>
+      <li><strong>Bekannte Knoten</strong> &mdash; Liste der Computer, die deine App bereits kennt (im selben lokalen Netzwerk &mdash; automatisch; au&#223;erhalb davon &mdash; muss manuell per IP-Adresse hinzugef&#252;gt werden).</li>
+      <li><strong>Seeds</strong> &mdash; feste, vertrauensw&#252;rdige Startpunkte. Es reicht, EINEN Seed hinzuzuf&#252;gen, um &#252;ber ihn den Rest des Netzwerks kennenzulernen, das er bereits kennt (genau wie "DNS-Seeds" in echtem Bitcoin funktionieren).</li>
+      <li><strong>Jetzt verbreiten</strong> &mdash; sendet deine Kette manuell an alle bekannten Knoten, falls die Automatik etwas verpasst hat.</li>
+    </ul>
+    <p>
+      Die Regel des Netzwerks: <strong>die l&#228;ngste g&#252;ltige Kette gewinnt</strong> &mdash; genau wie
+      bei Bitcoin. Mit einer zus&#228;tzlichen, speziell in dieser App eingebauten Absicherung: eine neue
+      Kette wird NIEMALS akzeptiert, wenn sie dein eigenes Guthaben verringern w&#252;rde &mdash; deine
+      geminten/empfangenen M&#252;nzen sind also sicher.
+    </p>
+
+    <h3>&#128225; Wie man das Netzwerk einrichtet</h3>
+    <p>
+      <strong>Im selben lokalen Netzwerk (gleiches WLAN/Router)</strong> &mdash; nichts zu tun. Einfach auf
+      beiden Computern auf "Zuh&#246;ren" klicken, und die App findet den anderen Computer von selbst.
+    </p>
+    <p>
+      <strong>Au&#223;erhalb des lokalen Netzwerks (anderes Zuhause, anderes Internet)</strong> &mdash;
+      automatische Erkennung funktioniert NICHT (eine physische Einschr&#228;nkung dieser Technologie, keine
+      einschaltbare Einstellung). Man muss:
+    </p>
+    <ul>
+      <li>Die <strong>&#246;ffentliche IP-Adresse</strong> jenes Netzwerks herausfinden &mdash; auf jenem Computer reicht es, bei Google "wie lautet meine IP-Adresse" zu suchen. Eine lokale Adresse aus <code>ipconfig</code> (z. B. 192.168.x.x) reicht nicht &mdash; diese Nummer wiederholt sich in jedem Haushalt der Welt.</li>
+      <li><strong>Portweiterleitung</strong> auf dem Router jenes Netzwerks einrichten (Port Forwarding / Virtual Server / NAT) &mdash; der Port, auf dem die App lauscht (standardm&#228;&#223;ig 1700), gerichtet auf die lokale Adresse dieses konkreten Computers.</li>
+      <li>Diesem Computer eine <strong>feste lokale Adresse</strong> im Router zuweisen, damit die Weiterleitung nach einer Adress&#228;nderung nicht aufh&#246;rt zu funktionieren.</li>
+      <li>Erst jetzt kann der andere Nutzer diese &#246;ffentliche Adresse als <strong>Seed</strong> (Tab Netzwerk) hinzuf&#252;gen und &#252;ber sie den Rest des Netzwerks erreichen.</li>
+    </ul>
+    <p>
+      <strong>Alternative ohne Portweiterleitung:</strong> <em>ZeroTier</em> oder <em>Hamachi</em> auf
+      beiden Computern &mdash; sie erstellen ein gemeinsames virtuelles Netzwerk, was so funktioniert, als
+      w&#228;re man im selben WLAN, ohne jegliche Router-Konfiguration.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Kontakt: <a href="mailto:capital2@go2.pl">capital2@go2.pl</a><br>
+  &copy; 2026 Gry Liczbowe &middot; kazekzak
+</footer>
+
+</body>
+</html>

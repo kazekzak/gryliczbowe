@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EuroJackCoin &middot; How it works &middot; Gry Liczbowe</title>
+<meta name="description" content="How EuroJackCoin works — explanation of the mechanics of an original cryptocurrency and peer-to-peer network written from scratch in C++.">
+<link rel="canonical" href="https://gryliczbowe.com/en/eurojackcoin-how-it-works.html">
+<link rel="alternate" hreflang="pl" href="https://gryliczbowe.com/eurojackcoin-jak-to-dziala.html">
+<link rel="alternate" hreflang="en" href="https://gryliczbowe.com/en/eurojackcoin-how-it-works.html">
+<link rel="alternate" hreflang="de" href="https://gryliczbowe.com/de/eurojackcoin-funktionsweise.html">
+<link rel="alternate" hreflang="fr" href="https://gryliczbowe.com/fr/eurojackcoin-comment-ca-marche.html">
+<link rel="alternate" hreflang="it" href="https://gryliczbowe.com/it/eurojackcoin-come-funziona.html">
+<link rel="alternate" hreflang="x-default" href="https://gryliczbowe.com/eurojackcoin-jak-to-dziala.html">
+<meta property="og:title" content="EuroJackCoin — how it works">
+<meta property="og:description" content="Explanation of the mechanics of an original cryptocurrency and peer-to-peer network written from scratch in C++.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gryliczbowe.com/en/eurojackcoin-how-it-works.html">
+<link rel="stylesheet" href="../wspolne.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html">&#127922; Gry Liczbowe</a></h1>
+  <p>Analysis and statistics for number games</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="eurojackpot.html">EuroJackpot</a>
+  <a href="duzylotek.html">Du&#380;y Lotek</a>
+  <a href="powerball.html">Powerball</a>
+  <a href="eurojackcoin.html" class="aktywny">EuroJackCoin</a>
+</nav>
+
+<div class="langi">
+  <a href="../eurojackcoin-jak-to-dziala.html">&#127477;&#127473;</a>
+  <a href="eurojackcoin-how-it-works.html" class="aktywny">&#127468;&#127463;</a>
+  <a href="../de/eurojackcoin-funktionsweise.html">&#127465;&#127466;</a>
+  <a href="../fr/eurojackcoin-comment-ca-marche.html">&#127467;&#127479;</a>
+  <a href="../it/eurojackcoin-come-funziona.html">&#127470;&#127481;</a>
+</div>
+
+<main>
+
+  <section id="jak-to-dziala">
+    <h2>How it works</h2>
+    <p>
+      A short guide to the app &mdash; what each tab does and which concepts it uses.
+      Back to the main EuroJackCoin page: <a href="eurojackcoin.html" style="color:#CE93D8;">here</a>.
+    </p>
+
+    <h3>&#128273; Public key and balance (Overview tab)</h3>
+    <p>
+      On first launch, the app automatically generates your <strong>wallet</strong> &mdash; a pair of
+      cryptographic keys (Ed25519). The <strong>public key</strong> is your "account number" &mdash; you
+      can safely share it with anyone who wants to send you coins. The other half of the pair (the private
+      key) is never shown to anyone &mdash; it's used to sign your transactions.
+    </p>
+    <p>
+      Your <strong>balance</strong> isn't stored anywhere directly &mdash; it's recalculated from scratch
+      each time, based on the entire transaction history in the blockchain.
+    </p>
+
+    <h3>&#9935;&#65039; Mining</h3>
+    <p>
+      "Mining" means appending a new block to the chain. Whoever mines a block gets an EJC reward for it
+      &mdash; just like in real Bitcoin. There are two modes:
+    </p>
+    <ul>
+      <li><strong>Mine block</strong> &mdash; mines a single block and stops.</li>
+      <li><strong>Mine in loop</strong> &mdash; mines blocks one after another, non-stop, until you click "Stop mining".</li>
+    </ul>
+
+    <h3>&#128184; Sending (Send tab)</h3>
+    <p>
+      You enter the recipient's public key and the amount. If the recipient is already a known node on
+      the network, you can pick them from the <strong>Known recipient</strong> list instead of pasting
+      the key manually. The transaction goes into a new block (together with your reward for mining it)
+      and is broadcast to known nodes on the network.
+    </p>
+
+    <h3>&#128229; Received</h3>
+    <p>A list of transactions in which you were the recipient.</p>
+
+    <h3>&#128279; Chain</h3>
+    <p>
+      The full history of all mined blocks &mdash; each block points to the previous one, so reverting or
+      swapping anything inside it immediately breaks the whole chain from that point on (which is why
+      blockchain is hard to falsify).
+    </p>
+
+    <h3>&#127760; Network (Network tab)</h3>
+    <p>This is where all the peer-to-peer network magic happens:</p>
+    <ul>
+      <li><strong>Listen</strong> &mdash; starts your node so others can connect to you.</li>
+      <li><strong>Known nodes</strong> &mdash; the list of computers your app already knows (on the same local network &mdash; automatically; outside of it &mdash; you need to add them manually by IP address).</li>
+      <li><strong>Seeds</strong> &mdash; fixed, trusted starting points. Adding just ONE seed is enough to learn about the rest of the network it already knows (exactly how "DNS seeds" work in real Bitcoin).</li>
+      <li><strong>Broadcast now</strong> &mdash; manually sends your chain to all known nodes, in case the automatic mechanism missed something.</li>
+    </ul>
+    <p>
+      The network's rule: <strong>the longest valid chain wins</strong> &mdash; exactly like in Bitcoin.
+      With one extra safeguard built into this app: a new chain will NEVER be accepted if it would
+      decrease your own balance &mdash; so your mined/received coins are safe.
+    </p>
+
+    <h3>&#128225; How to set up the network</h3>
+    <p>
+      <strong>On the same local network (same WiFi/router)</strong> &mdash; nothing to do. Just click
+      "Listen" on both computers, and the app will find the other one automatically.
+    </p>
+    <p>
+      <strong>Outside the local network (different home, different internet)</strong> &mdash; automatic
+      discovery does NOT work (a physical limitation of this technology, not a setting to turn on). You need to:
+    </p>
+    <ul>
+      <li>Find out the <strong>public IP address</strong> of that network &mdash; on that computer, just Google "what is my ip address". A local address from <code>ipconfig</code> (e.g. 192.168.x.x) is not enough &mdash; that number repeats in every home in the world.</li>
+      <li>Set up <strong>port forwarding</strong> on that network's router (Port Forwarding / Virtual Server / NAT) &mdash; the port the app listens on (1700 by default), pointed to that specific computer's local address.</li>
+      <li>Give that computer a <strong>fixed local address</strong> in the router, so the forwarding doesn't break after the address changes.</li>
+      <li>Only now can the other user add that public address as a <strong>Seed</strong> (Network tab) and use it to reach the rest of the network through it.</li>
+    </ul>
+    <p>
+      <strong>Alternative without port forwarding:</strong> <em>ZeroTier</em> or <em>Hamachi</em> on both
+      computers &mdash; they create a shared virtual network, which works like being on the same WiFi,
+      with no router configuration needed.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Contact: <a href="mailto:capital2@go2.pl">capital2@go2.pl</a><br>
+  &copy; 2026 Gry Liczbowe &middot; kazekzak
+</footer>
+
+</body>
+</html>

@@ -64,4 +64,28 @@
     <loc>https://gryliczbowe.com/it/risultati-eurojackpot.html</loc>
     <priority>0.8</priority>
   </url>
+  <url><loc>https://gryliczbowe.com/en/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://gryliczbowe.com/en/eurojackpot.html</loc><priority>0.8</priority></url>
+  <url><loc>https://gryliczbowe.com/en/duzylotek.html</loc><priority>0.7</priority></url>
+  <url><loc>https://gryliczbowe.com/en/powerball.html</loc><priority>0.6</priority></url>
+  <url><loc>https://gryliczbowe.com/en/eurojackcoin.html</loc><priority>0.6</priority></url>
+  <url><loc>https://gryliczbowe.com/en/eurojackcoin-how-it-works.html</loc><priority>0.5</priority></url>
+  <url><loc>https://gryliczbowe.com/de/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://gryliczbowe.com/de/eurojackpot.html</loc><priority>0.8</priority></url>
+  <url><loc>https://gryliczbowe.com/de/duzylotek.html</loc><priority>0.7</priority></url>
+  <url><loc>https://gryliczbowe.com/de/powerball.html</loc><priority>0.6</priority></url>
+  <url><loc>https://gryliczbowe.com/de/eurojackcoin.html</loc><priority>0.6</priority></url>
+  <url><loc>https://gryliczbowe.com/de/eurojackcoin-funktionsweise.html</loc><priority>0.5</priority></url>
+  <url><loc>https://gryliczbowe.com/fr/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://gryliczbowe.com/fr/eurojackpot.html</loc><priority>0.8</priority></url>
+  <url><loc>https://gryliczbowe.com/fr/duzylotek.html</loc><priority>0.7</priority></url>
+  <url><loc>https://gryliczbowe.com/fr/powerball.html</loc><priority>0.6</priority></url>
+  <url><loc>https://gryliczbowe.com/fr/eurojackcoin.html</loc><priority>0.6</priority></url>
+  <url><loc>https://gryliczbowe.com/fr/eurojackcoin-comment-ca-marche.html</loc><priority>0.5</priority></url>
+  <url><loc>https://gryliczbowe.com/it/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://gryliczbowe.com/it/eurojackpot.html</loc><priority>0.8</priority></url>
+  <url><loc>https://gryliczbowe.com/it/duzylotek.html</loc><priority>0.7</priority></url>
+  <url><loc>https://gryliczbowe.com/it/powerball.html</loc><priority>0.6</priority></url>
+  <url><loc>https://gryliczbowe.com/it/eurojackcoin.html</loc><priority>0.6</priority></url>
+  <url><loc>https://gryliczbowe.com/it/eurojackcoin-come-funziona.html</loc><priority>0.5</priority></url>
 </urlset>
