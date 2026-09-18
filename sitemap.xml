@@ -24,4 +24,44 @@
     <loc>https://kazekzak.github.io/gryliczbowe/eurojackcoin-jak-to-dziala.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/eurojackpot-statystyki.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/eurojackpot-wyniki.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/en/eurojackpot-statistics.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/en/eurojackpot-results.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/de/eurojackpot-statistiken.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/de/eurojackpot-ergebnisse.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/fr/eurojackpot-statistiques.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/fr/eurojackpot-resultats.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/it/statistiche-eurojackpot.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazekzak.github.io/gryliczbowe/it/risultati-eurojackpot.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
