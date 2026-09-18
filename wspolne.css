@@ -103,9 +103,10 @@ footer {
 }
 footer a { color: #9575CD; }
 
-.langi { display: flex; gap: 14px; justify-content: center; margin-top: 14px; font-size: 0.85em; }
-.langi a { color: #9575CD; text-decoration: none; }
-.langi a.aktywny, .langi a:hover { color: #fff; }
+.langi { display: flex; gap: 14px; justify-content: center; align-items: center; margin-top: 14px; }
+.langi a { display: inline-flex; opacity: 0.55; transition: opacity 0.2s, transform 0.2s; }
+.langi a.aktywny, .langi a:hover { opacity: 1; transform: scale(1.15); }
+.langi img.flag { width: 24px; height: 17px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,0.15); display: block; }
 
 .kulki { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px; }
 .kulka {
