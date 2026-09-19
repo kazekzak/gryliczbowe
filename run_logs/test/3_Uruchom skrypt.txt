@@ -1,5 +1,0 @@
-﻿2026-09-19T05:02:06.2187497Z ##[group]Run python3 update_eurojackpot_stats.py
-2026-09-19T05:02:06.2188180Z [36;1mpython3 update_eurojackpot_stats.py[0m
-2026-09-19T05:02:06.2224231Z shell: /usr/bin/bash -e {0}
-2026-09-19T05:02:06.2224680Z ##[endgroup]
-2026-09-19T05:02:06.3689560Z Zaktualizowano statystyki EuroJackpot: 991 losowan, ostatnia data 18.09.2026
