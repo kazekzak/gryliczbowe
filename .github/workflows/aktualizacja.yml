@@ -47,9 +47,18 @@ jobs:
             echo "Brak nowych danych - pomijam"
           else
             mv eurojackpot_nowy.csv eurojackpot.csv
+
+            echo "Przeliczam statystyki na stronach HTML..."
+            python3 update_eurojackpot_stats.py
+
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add eurojackpot.csv
+            git add eurojackpot.csv \
+              eurojackpot-statystyki.html eurojackpot-wyniki.html \
+              en/eurojackpot-statistics.html en/eurojackpot-results.html \
+              de/eurojackpot-statistiken.html de/eurojackpot-ergebnisse.html \
+              fr/eurojackpot-statistiques.html fr/eurojackpot-resultats.html \
+              it/statistiche-eurojackpot.html it/risultati-eurojackpot.html
             git commit -m "Aktualizacja wynikow EuroJackpot $(date +%Y-%m-%d)"
             git push
             echo "Zaktualizowano!"
