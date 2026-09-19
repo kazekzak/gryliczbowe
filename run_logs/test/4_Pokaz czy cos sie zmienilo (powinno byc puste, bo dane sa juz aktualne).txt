@@ -1,0 +1,277 @@
+﻿2026-09-19T05:02:06.4782020Z ##[group]Run echo "=== git diff --stat ==="
+2026-09-19T05:02:06.4782737Z [36;1mecho "=== git diff --stat ==="[0m
+2026-09-19T05:02:06.4783332Z [36;1mgit diff --stat[0m
+2026-09-19T05:02:06.4783949Z [36;1mecho "=== git diff (pelny) ==="[0m
+2026-09-19T05:02:06.4784311Z [36;1mgit diff[0m
+2026-09-19T05:02:06.4818257Z shell: /usr/bin/bash -e {0}
+2026-09-19T05:02:06.4818614Z ##[endgroup]
+2026-09-19T05:02:06.6008664Z === git diff --stat ===
+2026-09-19T05:02:06.6693636Z  de/eurojackpot-statistiken.html  | 23 ++++++-----------------
+2026-09-19T05:02:06.6694423Z  en/eurojackpot-statistics.html   | 23 ++++++-----------------
+2026-09-19T05:02:06.6694975Z  eurojackpot-statystyki.html      | 23 ++++++-----------------
+2026-09-19T05:02:06.6695555Z  fr/eurojackpot-statistiques.html | 24 ++++++------------------
+2026-09-19T05:02:06.6696181Z  it/statistiche-eurojackpot.html  | 24 ++++++------------------
+2026-09-19T05:02:06.6696734Z  5 files changed, 30 insertions(+), 87 deletions(-)
+2026-09-19T05:02:06.6697177Z === git diff (pelny) ===
+2026-09-19T05:02:06.7376805Z diff --git a/de/eurojackpot-statistiken.html b/de/eurojackpot-statistiken.html
+2026-09-19T05:02:06.7377534Z index df04ccb..2ab8c4d 100644
+2026-09-19T05:02:06.7377960Z --- a/de/eurojackpot-statistiken.html
+2026-09-19T05:02:06.7378371Z +++ b/de/eurojackpot-statistiken.html
+2026-09-19T05:02:06.7378767Z @@ -56,41 +56,30 @@
+2026-09-19T05:02:06.7379597Z      <h3>&#128293; Heiße Zahlen (am häufigsten gezogen)</h3>
+2026-09-19T05:02:06.7380046Z      <p>Hauptzahlen (1–50):</p>
+2026-09-19T05:02:06.7380466Z      <div class="kulki"><!--EJ:HOT_MAIN-->
+2026-09-19T05:02:06.7381171Z -      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span>
+2026-09-19T05:02:06.7381651Z -      <span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span>
+2026-09-19T05:02:06.7382117Z -      <span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7382482Z -      <span class="kulka">23</span>
+2026-09-19T05:02:06.7383727Z +      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span><span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span><span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span><span class="kulka">23</span>
+2026-09-19T05:02:06.7384997Z      <!--/EJ:HOT_MAIN--></div>
+2026-09-19T05:02:06.7385406Z      <p>Eurozahlen (1–12):</p>
+2026-09-19T05:02:06.7386056Z      <div class="kulki"><!--EJ:HOT_EURO-->
+2026-09-19T05:02:06.7386556Z -      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span>
+2026-09-19T05:02:06.7387088Z -      <span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7387800Z +      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span><span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7388615Z      <!--/EJ:HOT_EURO--></div>
+2026-09-19T05:02:06.7388839Z  
+2026-09-19T05:02:06.7389093Z      <h3>&#10052;&#65039; Kalte Zahlen (am seltensten gezogen)</h3>
+2026-09-19T05:02:06.7389448Z      <p>Hauptzahlen (1–50):</p>
+2026-09-19T05:02:06.7389694Z      <div class="kulki"><!--EJ:COLD_MAIN-->
+2026-09-19T05:02:06.7390057Z -      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span>
+2026-09-19T05:02:06.7390519Z -      <span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span>
+2026-09-19T05:02:06.7391126Z -      <span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span>
+2026-09-19T05:02:06.7391490Z -      <span class="kulka">10</span>
+2026-09-19T05:02:06.7392263Z +      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span><span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span><span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span><span class="kulka">10</span>
+2026-09-19T05:02:06.7393252Z      <!--/EJ:COLD_MAIN--></div>
+2026-09-19T05:02:06.7393520Z      <p>Eurozahlen (1–12):</p>
+2026-09-19T05:02:06.7393768Z      <div class="kulki"><!--EJ:COLD_EURO-->
+2026-09-19T05:02:06.7394168Z -      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span>
+2026-09-19T05:02:06.7394690Z -      <span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7395415Z +      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span><span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7396011Z      <!--/EJ:COLD_EURO--></div>
+2026-09-19T05:02:06.7396230Z  
+2026-09-19T05:02:06.7396522Z      <h3>&#8987; Überfällige Zahlen (längste Abwesenheit)</h3>
+2026-09-19T05:02:06.7396928Z      <p>Hauptzahlen — Ziehungen seit dem letzten Erscheinen:</p>
+2026-09-19T05:02:06.7397285Z      <div class="kulki"><!--EJ:OVERDUE_MAIN-->
+2026-09-19T05:02:06.7397663Z -      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7398117Z -      <span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span>
+2026-09-19T05:02:06.7398559Z -      <span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span>
+2026-09-19T05:02:06.7398914Z -      <span class="kulka">17</span>
+2026-09-19T05:02:06.7399667Z +      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span><span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span><span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span><span class="kulka">17</span>
+2026-09-19T05:02:06.7400425Z      <!--/EJ:OVERDUE_MAIN--></div>
+2026-09-19T05:02:06.7400775Z      <p style="font-size:0.85em; color:#9E9E9E; margin-top:-14px;"><!--EJ:OVERDUE_NOTE-->
+2026-09-19T05:02:06.7401480Z -      Zahl 38 fehlt am längsten (31 Ziehungen), gefolgt von 2 und 18 (je 28 Ziehungen).
+2026-09-19T05:02:06.7401991Z +      Am längsten überfällig: 38 (31 Ziehungen), 2 (28 Ziehungen), 18 (28 Ziehungen).
+2026-09-19T05:02:06.7402357Z      <!--/EJ:OVERDUE_NOTE--></p>
+2026-09-19T05:02:06.7402596Z  
+2026-09-19T05:02:06.7403053Z      <a class="badge" href="eurojackpot-ergebnisse.html">&#128202; Aktuelle Ergebnisse ansehen</a>
+2026-09-19T05:02:06.7403581Z diff --git a/en/eurojackpot-statistics.html b/en/eurojackpot-statistics.html
+2026-09-19T05:02:06.7403959Z index ba00a5f..4c8425d 100644
+2026-09-19T05:02:06.7404228Z --- a/en/eurojackpot-statistics.html
+2026-09-19T05:02:06.7404507Z +++ b/en/eurojackpot-statistics.html
+2026-09-19T05:02:06.7404751Z @@ -56,41 +56,30 @@
+2026-09-19T05:02:06.7405035Z      <h3>&#128293; Hot numbers (most frequently drawn)</h3>
+2026-09-19T05:02:06.7405376Z      <p>Main numbers (1–50):</p>
+2026-09-19T05:02:06.7405636Z      <div class="kulki"><!--EJ:HOT_MAIN-->
+2026-09-19T05:02:06.7406180Z -      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span>
+2026-09-19T05:02:06.7406659Z -      <span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span>
+2026-09-19T05:02:06.7407124Z -      <span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7407485Z -      <span class="kulka">23</span>
+2026-09-19T05:02:06.7408315Z +      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span><span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span><span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span><span class="kulka">23</span>
+2026-09-19T05:02:06.7409085Z      <!--/EJ:HOT_MAIN--></div>
+2026-09-19T05:02:06.7409357Z      <p>Euro numbers (1–12):</p>
+2026-09-19T05:02:06.7409607Z      <div class="kulki"><!--EJ:HOT_EURO-->
+2026-09-19T05:02:06.7410017Z -      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span>
+2026-09-19T05:02:06.7410737Z -      <span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7411726Z +      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span><span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7412332Z      <!--/EJ:HOT_EURO--></div>
+2026-09-19T05:02:06.7412561Z  
+2026-09-19T05:02:06.7412830Z      <h3>&#10052;&#65039; Cold numbers (least frequently drawn)</h3>
+2026-09-19T05:02:06.7413180Z      <p>Main numbers (1–50):</p>
+2026-09-19T05:02:06.7413442Z      <div class="kulki"><!--EJ:COLD_MAIN-->
+2026-09-19T05:02:06.7413828Z -      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span>
+2026-09-19T05:02:06.7414311Z -      <span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span>
+2026-09-19T05:02:06.7414804Z -      <span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span>
+2026-09-19T05:02:06.7415171Z -      <span class="kulka">10</span>
+2026-09-19T05:02:06.7416003Z +      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span><span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span><span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span><span class="kulka">10</span>
+2026-09-19T05:02:06.7416775Z      <!--/EJ:COLD_MAIN--></div>
+2026-09-19T05:02:06.7417053Z      <p>Euro numbers (1–12):</p>
+2026-09-19T05:02:06.7417314Z      <div class="kulki"><!--EJ:COLD_EURO-->
+2026-09-19T05:02:06.7417734Z -      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span>
+2026-09-19T05:02:06.7418278Z -      <span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7419051Z +      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span><span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7419648Z      <!--/EJ:COLD_EURO--></div>
+2026-09-19T05:02:06.7419873Z  
+2026-09-19T05:02:06.7420103Z      <h3>&#8987; Overdue numbers (longest absent)</h3>
+2026-09-19T05:02:06.7420457Z      <p>Main numbers — draws since last appearance:</p>
+2026-09-19T05:02:06.7420759Z      <div class="kulki"><!--EJ:OVERDUE_MAIN-->
+2026-09-19T05:02:06.7421282Z -      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7421758Z -      <span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span>
+2026-09-19T05:02:06.7422225Z -      <span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span>
+2026-09-19T05:02:06.7422584Z -      <span class="kulka">17</span>
+2026-09-19T05:02:06.7423417Z +      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span><span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span><span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span><span class="kulka">17</span>
+2026-09-19T05:02:06.7424332Z      <!--/EJ:OVERDUE_MAIN--></div>
+2026-09-19T05:02:06.7424710Z      <p style="font-size:0.85em; color:#9E9E9E; margin-top:-14px;"><!--EJ:OVERDUE_NOTE-->
+2026-09-19T05:02:06.7425198Z -      Number 38 has been absent the longest (31 draws), followed by 2 and 18 (28 draws each).
+2026-09-19T05:02:06.7425626Z +      Longest overdue: 38 (31 draws), 2 (28 draws), 18 (28 draws).
+2026-09-19T05:02:06.7425935Z      <!--/EJ:OVERDUE_NOTE--></p>
+2026-09-19T05:02:06.7426163Z  
+2026-09-19T05:02:06.7426480Z      <a class="badge" href="eurojackpot-results.html">&#128202; See latest results</a>
+2026-09-19T05:02:06.7426955Z diff --git a/eurojackpot-statystyki.html b/eurojackpot-statystyki.html
+2026-09-19T05:02:06.7427408Z index 7233ca0..588a55b 100644
+2026-09-19T05:02:06.7427668Z --- a/eurojackpot-statystyki.html
+2026-09-19T05:02:06.7427931Z +++ b/eurojackpot-statystyki.html
+2026-09-19T05:02:06.7428167Z @@ -57,41 +57,30 @@
+2026-09-19T05:02:06.7428566Z      <h3>&#128293; Liczby gorące (najczęściej losowane)</h3>
+2026-09-19T05:02:06.7428901Z      <p>Liczby główne (1–50):</p>
+2026-09-19T05:02:06.7429164Z      <div class="kulki"><!--EJ:HOT_MAIN-->
+2026-09-19T05:02:06.7429544Z -      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span>
+2026-09-19T05:02:06.7430016Z -      <span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span>
+2026-09-19T05:02:06.7430485Z -      <span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7431007Z -      <span class="kulka">23</span>
+2026-09-19T05:02:06.7431823Z +      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span><span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span><span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span><span class="kulka">23</span>
+2026-09-19T05:02:06.7432618Z      <!--/EJ:HOT_MAIN--></div>
+2026-09-19T05:02:06.7432908Z      <p>Liczby dodatkowe / Euro (1–12):</p>
+2026-09-19T05:02:06.7433181Z      <div class="kulki"><!--EJ:HOT_EURO-->
+2026-09-19T05:02:06.7433581Z -      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span>
+2026-09-19T05:02:06.7434134Z -      <span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7434870Z +      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span><span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7435460Z      <!--/EJ:HOT_EURO--></div>
+2026-09-19T05:02:06.7435685Z  
+2026-09-19T05:02:06.7435929Z      <h3>&#10052;&#65039; Liczby zimne (najrzadziej losowane)</h3>
+2026-09-19T05:02:06.7436278Z      <p>Liczby główne (1–50):</p>
+2026-09-19T05:02:06.7436535Z      <div class="kulki"><!--EJ:COLD_MAIN-->
+2026-09-19T05:02:06.7436905Z -      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span>
+2026-09-19T05:02:06.7437377Z -      <span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span>
+2026-09-19T05:02:06.7437839Z -      <span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span>
+2026-09-19T05:02:06.7438195Z -      <span class="kulka">10</span>
+2026-09-19T05:02:06.7439022Z +      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span><span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span><span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span><span class="kulka">10</span>
+2026-09-19T05:02:06.7439782Z      <!--/EJ:COLD_MAIN--></div>
+2026-09-19T05:02:06.7500477Z      <p>Liczby dodatkowe / Euro (1–12):</p>
+2026-09-19T05:02:06.7501026Z      <div class="kulki"><!--EJ:COLD_EURO-->
+2026-09-19T05:02:06.7501500Z -      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span>
+2026-09-19T05:02:06.7502123Z -      <span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7502962Z +      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span><span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7503569Z      <!--/EJ:COLD_EURO--></div>
+2026-09-19T05:02:06.7503797Z  
+2026-09-19T05:02:06.7504115Z      <h3>&#8987; Liczby zaległe (najdłużej nieobecne)</h3>
+2026-09-19T05:02:06.7504555Z      <p>Liczby główne — liczba losowań od ostatniego pojawienia się:</p>
+2026-09-19T05:02:06.7504927Z      <div class="kulki"><!--EJ:OVERDUE_MAIN-->
+2026-09-19T05:02:06.7505547Z -      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7506043Z -      <span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span>
+2026-09-19T05:02:06.7506526Z -      <span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span>
+2026-09-19T05:02:06.7506897Z -      <span class="kulka">17</span>
+2026-09-19T05:02:06.7507702Z +      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span><span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span><span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span><span class="kulka">17</span>
+2026-09-19T05:02:06.7508477Z      <!--/EJ:OVERDUE_MAIN--></div>
+2026-09-19T05:02:06.7508849Z      <p style="font-size:0.85em; color:#9E9E9E; margin-top:-14px;"><!--EJ:OVERDUE_NOTE-->
+2026-09-19T05:02:06.7509417Z -      Najdłużej zalega liczba 38 (31 losowań), następnie 2 i 18 (po 28 losowań).
+2026-09-19T05:02:06.7509925Z +      Najdłużej zalegają: 38 (31 losowań), 2 (28 losowań), 18 (28 losowań).
+2026-09-19T05:02:06.7510275Z      <!--/EJ:OVERDUE_NOTE--></p>
+2026-09-19T05:02:06.7510505Z  
+2026-09-19T05:02:06.7510823Z      <a class="badge" href="eurojackpot-wyniki.html">&#128202; Zobacz ostatnie wyniki</a>
+2026-09-19T05:02:06.7511518Z diff --git a/fr/eurojackpot-statistiques.html b/fr/eurojackpot-statistiques.html
+2026-09-19T05:02:06.7511914Z index 6dec151..75428fa 100644
+2026-09-19T05:02:06.7512179Z --- a/fr/eurojackpot-statistiques.html
+2026-09-19T05:02:06.7512450Z +++ b/fr/eurojackpot-statistiques.html
+2026-09-19T05:02:06.7512714Z @@ -57,42 +57,30 @@
+2026-09-19T05:02:06.7513002Z      <h3>&#128293; Numéros chauds (les plus tirés)</h3>
+2026-09-19T05:02:06.7513328Z      <p>Numéros principaux (1–50) :</p>
+2026-09-19T05:02:06.7513597Z      <div class="kulki"><!--EJ:HOT_MAIN-->
+2026-09-19T05:02:06.7513972Z -      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span>
+2026-09-19T05:02:06.7514474Z -      <span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span>
+2026-09-19T05:02:06.7514931Z -      <span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7515280Z -      <span class="kulka">23</span>
+2026-09-19T05:02:06.7516084Z +      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span><span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span><span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span><span class="kulka">23</span>
+2026-09-19T05:02:06.7516847Z      <!--/EJ:HOT_MAIN--></div>
+2026-09-19T05:02:06.7517109Z      <p>Numéros Euro (1–12) :</p>
+2026-09-19T05:02:06.7517359Z      <div class="kulki"><!--EJ:HOT_EURO-->
+2026-09-19T05:02:06.7517760Z -      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span>
+2026-09-19T05:02:06.7518279Z -      <span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7519147Z +      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span><span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7519723Z      <!--/EJ:HOT_EURO--></div>
+2026-09-19T05:02:06.7519942Z  
+2026-09-19T05:02:06.7520222Z      <h3>&#10052;&#65039; Numéros froids (les moins tirés)</h3>
+2026-09-19T05:02:06.7520554Z      <p>Numéros principaux (1–50) :</p>
+2026-09-19T05:02:06.7520818Z      <div class="kulki"><!--EJ:COLD_MAIN-->
+2026-09-19T05:02:06.7521336Z -      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span>
+2026-09-19T05:02:06.7521803Z -      <span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span>
+2026-09-19T05:02:06.7522268Z -      <span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span>
+2026-09-19T05:02:06.7522753Z -      <span class="kulka">10</span>
+2026-09-19T05:02:06.7523554Z +      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span><span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span><span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span><span class="kulka">10</span>
+2026-09-19T05:02:06.7524347Z      <!--/EJ:COLD_MAIN--></div>
+2026-09-19T05:02:06.7524618Z      <p>Numéros Euro (1–12) :</p>
+2026-09-19T05:02:06.7524876Z      <div class="kulki"><!--EJ:COLD_EURO-->
+2026-09-19T05:02:06.7525285Z -      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span>
+2026-09-19T05:02:06.7525829Z -      <span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7526567Z +      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span><span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7527173Z      <!--/EJ:COLD_EURO--></div>
+2026-09-19T05:02:06.7527380Z  
+2026-09-19T05:02:06.7527686Z      <h3>&#8987; Numéros en retard (absents depuis le plus longtemps)</h3>
+2026-09-19T05:02:06.7528133Z      <p>Numéros principaux — tirages depuis la dernière apparition :</p>
+2026-09-19T05:02:06.7528481Z      <div class="kulki"><!--EJ:OVERDUE_MAIN-->
+2026-09-19T05:02:06.7528862Z -      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7529337Z -      <span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span>
+2026-09-19T05:02:06.7529793Z -      <span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span>
+2026-09-19T05:02:06.7530139Z -      <span class="kulka">17</span>
+2026-09-19T05:02:06.7531070Z +      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span><span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span><span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span><span class="kulka">17</span>
+2026-09-19T05:02:06.7531854Z      <!--/EJ:OVERDUE_MAIN--></div>
+2026-09-19T05:02:06.7532218Z      <p style="font-size:0.85em; color:#9E9E9E; margin-top:-14px;"><!--EJ:OVERDUE_NOTE-->
+2026-09-19T05:02:06.7532701Z -      Le numéro 38 est absent depuis le plus longtemps (31 tirages), suivi de
+2026-09-19T05:02:06.7533041Z -      2 et 18 (28 tirages chacun).
+2026-09-19T05:02:06.7533357Z +      Les plus en retard : 38 (31 tirages), 2 (28 tirages), 18 (28 tirages).
+2026-09-19T05:02:06.7533679Z      <!--/EJ:OVERDUE_NOTE--></p>
+2026-09-19T05:02:06.7533898Z  
+2026-09-19T05:02:06.7534293Z      <a class="badge" href="eurojackpot-resultats.html">&#128202; Voir les derniers résultats</a>
+2026-09-19T05:02:06.7534797Z diff --git a/it/statistiche-eurojackpot.html b/it/statistiche-eurojackpot.html
+2026-09-19T05:02:06.7535158Z index 0d36a48..6e0bd6a 100644
+2026-09-19T05:02:06.7535542Z --- a/it/statistiche-eurojackpot.html
+2026-09-19T05:02:06.7535812Z +++ b/it/statistiche-eurojackpot.html
+2026-09-19T05:02:06.7536059Z @@ -57,42 +57,30 @@
+2026-09-19T05:02:06.7536346Z      <h3>&#128293; Numeri caldi (i più estratti)</h3>
+2026-09-19T05:02:06.7536658Z      <p>Numeri principali (1–50):</p>
+2026-09-19T05:02:06.7536918Z      <div class="kulki"><!--EJ:HOT_MAIN-->
+2026-09-19T05:02:06.7537288Z -      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span>
+2026-09-19T05:02:06.7537747Z -      <span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span>
+2026-09-19T05:02:06.7538195Z -      <span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7538548Z -      <span class="kulka">23</span>
+2026-09-19T05:02:06.7539344Z +      <span class="kulka">20</span><span class="kulka">34</span><span class="kulka">35</span><span class="kulka">17</span><span class="kulka">21</span><span class="kulka">11</span><span class="kulka">16</span><span class="kulka">49</span><span class="kulka">18</span><span class="kulka">23</span>
+2026-09-19T05:02:06.7540264Z      <!--/EJ:HOT_MAIN--></div>
+2026-09-19T05:02:06.7540531Z      <p>Numeri Euro (1–12):</p>
+2026-09-19T05:02:06.7540777Z      <div class="kulki"><!--EJ:HOT_EURO-->
+2026-09-19T05:02:06.7541337Z -      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span>
+2026-09-19T05:02:06.7541860Z -      <span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7542594Z +      <span class="kulka euro">5</span><span class="kulka euro">3</span><span class="kulka euro">8</span><span class="kulka euro">7</span><span class="kulka euro">4</span><span class="kulka euro">6</span>
+2026-09-19T05:02:06.7543171Z      <!--/EJ:HOT_EURO--></div>
+2026-09-19T05:02:06.7543389Z  
+2026-09-19T05:02:06.7543613Z      <h3>&#10052;&#65039; Numeri freddi (i meno estratti)</h3>
+2026-09-19T05:02:06.7543965Z      <p>Numeri principali (1–50):</p>
+2026-09-19T05:02:06.7544222Z      <div class="kulki"><!--EJ:COLD_MAIN-->
+2026-09-19T05:02:06.7544582Z -      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span>
+2026-09-19T05:02:06.7545037Z -      <span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span>
+2026-09-19T05:02:06.7545485Z -      <span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span>
+2026-09-19T05:02:06.7545833Z -      <span class="kulka">10</span>
+2026-09-19T05:02:06.7546619Z +      <span class="kulka">48</span><span class="kulka">36</span><span class="kulka">28</span><span class="kulka">25</span><span class="kulka">50</span><span class="kulka">27</span><span class="kulka">5</span><span class="kulka">24</span><span class="kulka">26</span><span class="kulka">10</span>
+2026-09-19T05:02:06.7547371Z      <!--/EJ:COLD_MAIN--></div>
+2026-09-19T05:02:06.7547633Z      <p>Numeri Euro (1–12):</p>
+2026-09-19T05:02:06.7547903Z      <div class="kulki"><!--EJ:COLD_EURO-->
+2026-09-19T05:02:06.7548296Z -      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span>
+2026-09-19T05:02:06.7548813Z -      <span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7549544Z +      <span class="kulka euro">11</span><span class="kulka euro">12</span><span class="kulka euro">10</span><span class="kulka euro">9</span><span class="kulka euro">2</span><span class="kulka euro">1</span>
+2026-09-19T05:02:06.7550127Z      <!--/EJ:COLD_EURO--></div>
+2026-09-19T05:02:06.7550335Z  
+2026-09-19T05:02:06.7550615Z      <h3>&#8987; Numeri ritardatari (assenti da più tempo)</h3>
+2026-09-19T05:02:06.7551200Z      <p>Numeri principali — estrazioni dall'ultima apparizione:</p>
+2026-09-19T05:02:06.7551537Z      <div class="kulki"><!--EJ:OVERDUE_MAIN-->
+2026-09-19T05:02:06.7551902Z -      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span>
+2026-09-19T05:02:06.7552496Z -      <span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span>
+2026-09-19T05:02:06.7552946Z -      <span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span>
+2026-09-19T05:02:06.7553292Z -      <span class="kulka">17</span>
+2026-09-19T05:02:06.7554082Z +      <span class="kulka">38</span><span class="kulka">2</span><span class="kulka">18</span><span class="kulka">29</span><span class="kulka">19</span><span class="kulka">44</span><span class="kulka">8</span><span class="kulka">20</span><span class="kulka">41</span><span class="kulka">17</span>
+2026-09-19T05:02:06.7554831Z      <!--/EJ:OVERDUE_MAIN--></div>
+2026-09-19T05:02:06.7555186Z      <p style="font-size:0.85em; color:#9E9E9E; margin-top:-14px;"><!--EJ:OVERDUE_NOTE-->
+2026-09-19T05:02:06.7555642Z -      Il numero 38 è assente da più tempo (31 estrazioni), seguito da
+2026-09-19T05:02:06.7555957Z -      2 e 18 (28 estrazioni ciascuno).
+2026-09-19T05:02:06.7556444Z +      I più ritardatari: 38 (31 estrazioni), 2 (28 estrazioni), 18 (28 estrazioni).
+2026-09-19T05:02:06.7556791Z      <!--/EJ:OVERDUE_NOTE--></p>
+2026-09-19T05:02:06.7557021Z  
+2026-09-19T05:02:06.7557342Z      <a class="badge" href="risultati-eurojackpot.html">&#128202; Vedi gli ultimi risultati</a>
