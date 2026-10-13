@@ -1,14 +1,22 @@
 name: Aktualizacja Powerball CSV
 
+# Zrodlo (data.ny.gov) dodaje nowe losowanie ok. 07:39 UTC dzien po losowaniu.
+# Zadanie startuje przed ta godzina i sprawdza zrodlo co 2 min, wiec wynik trafia
+# na GitHub kilka minut po publikacji. Drugi termin to zapas.
 on:
   schedule:
-    - cron: '0 10 * * 2,4,0'
-    - cron: '0 11 * * 2,4,0'
+    - cron: '25 7 * * 2,4,0'
+    - cron: '40 8 * * 2,4,0'
   workflow_dispatch:
+
+concurrency:
+  group: aktualizacja-powerball
+  cancel-in-progress: false
 
 jobs:
   aktualizuj:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     permissions:
       contents: write
     steps:
@@ -17,16 +25,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Pobierz dane z NY State Open Data (data.ny.gov)
+      - name: Czekaj na nowe dane (sprawdzaj co 2 min, do 90 min)
+        id: czekaj
         run: |
-          curl -L --fail --retry 3 \
-            -o powerball_surowe.csv \
-            "https://data.ny.gov/resource/d6yy-54nr.csv?\$limit=3000&\$order=draw_date%20ASC"
-          echo "Pobrano $(wc -l < powerball_surowe.csv) wierszy"
-
-      - name: Konwertuj do formatu apki (od 07.10.2015, obecny format 1-69 + 1-26)
-        run: |
-          python3 <<'EOF'
+          cat > konwertuj.py <<'EOF'
           import csv
 
           with open("powerball_surowe.csv", newline="", encoding="utf-8") as f:
@@ -53,29 +55,33 @@ jobs:
           print(f"Przekonwertowano {len(out)} losowan")
           EOF
 
-      - name: Walidacja przekonwertowanego pliku
-        run: |
-          if ! head -1 powerball_nowy.csv | grep -q "^0001,"; then
-            echo "BLAD: plik nie zaczyna sie od danych CSV - przerywam"
-            head -5 powerball_nowy.csv
-            exit 1
-          fi
-          if [ $(wc -l < powerball_nowy.csv) -lt 1380 ]; then
-            echo "BLAD: plik podejrzanie krotki - przerywam"
-            exit 1
-          fi
-          echo "Walidacja OK"
+          nowe=false
+          for i in $(seq 1 45); do
+            if curl -sL --fail --retry 2 \
+                 -o powerball_surowe.csv \
+                 "https://data.ny.gov/resource/d6yy-54nr.csv?\$limit=3000&\$order=draw_date%20ASC" \
+               && python3 konwertuj.py \
+               && head -1 powerball_nowy.csv | grep -q "^0001," \
+               && [ $(wc -l < powerball_nowy.csv) -ge 1380 ]; then
+              if ! diff -q powerball.csv powerball_nowy.csv > /dev/null 2>&1; then
+                nowe=true
+                echo "Nowe dane po $i probach"
+                break
+              fi
+            fi
+            sleep 120
+          done
+          rm -f konwertuj.py powerball_surowe.csv
+          echo "nowe=$nowe" >> "$GITHUB_OUTPUT"
+          [ "$nowe" = "true" ] || echo "Brak nowych danych - pomijam"
 
-      - name: Porownaj i wgraj jesli nowe dane
+      - name: Wgraj nowe dane
+        if: steps.czekaj.outputs.nowe == 'true'
         run: |
-          if diff -q powerball.csv powerball_nowy.csv > /dev/null 2>&1; then
-            echo "Brak nowych danych - pomijam"
-          else
-            mv powerball_nowy.csv powerball.csv
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add powerball.csv
-            git commit -m "Aktualizacja wynikow Powerball $(date +%Y-%m-%d)"
-            git push
-            echo "Zaktualizowano!"
-          fi
+          mv powerball_nowy.csv powerball.csv
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add powerball.csv
+          git commit -m "Aktualizacja wynikow Powerball $(date +%Y-%m-%d)"
+          git push
+          echo "Zaktualizowano!"

@@ -1,14 +1,22 @@
 name: Aktualizacja EuroJackpot CSV
 
+# Zadanie startuje przed publikacja wynikow i samo sprawdza zrodlo co 3 min,
+# wiec wynik trafia na GitHub kilka minut po publikacji (a nie kiedy GitHub
+# raczy uruchomic zadanie z harmonogramu). Drugi termin to zapas.
 on:
   schedule:
-    - cron: '45 17 * * 2,5'
-    - cron: '45 18 * * 2,5'
+    - cron: '15 18 * * 2,5'
+    - cron: '45 20 * * 2,5'
   workflow_dispatch:
+
+concurrency:
+  group: aktualizacja-eurojackpot
+  cancel-in-progress: false
 
 jobs:
   aktualizuj:
     runs-on: ubuntu-latest
+    timeout-minutes: 340
     permissions:
       contents: write
     steps:
@@ -17,49 +25,47 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Pobierz eurojackpot.csv
+      - name: Czekaj na nowe dane (sprawdzaj co 3 min, do 5 godzin)
+        id: czekaj
         run: |
-          curl -L --fail --retry 3 \
-            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-            -H "Accept: text/csv,text/plain,*/*" \
-            -H "Accept-Language: pl-PL,pl;q=0.9,en;q=0.8" \
-            -H "Referer: https://www.wynikilotto.net.pl/" \
-            -o eurojackpot_nowy.csv \
-            "https://www.wynikilotto.net.pl/download/eurojackpot.csv"
-          echo "Pobrano $(wc -l < eurojackpot_nowy.csv) wierszy"
+          nowe=false
+          for i in $(seq 1 100); do
+            if curl -sL --fail --retry 2 \
+                 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+                 -H "Accept: text/csv,text/plain,*/*" \
+                 -H "Accept-Language: pl-PL,pl;q=0.9,en;q=0.8" \
+                 -H "Referer: https://www.wynikilotto.net.pl/" \
+                 -o eurojackpot_nowy.csv \
+                 "https://www.wynikilotto.net.pl/download/eurojackpot.csv" \
+               && head -1 eurojackpot_nowy.csv | grep -q "^0001," \
+               && [ $(wc -l < eurojackpot_nowy.csv) -ge 900 ]; then
+              if ! diff -q eurojackpot.csv eurojackpot_nowy.csv > /dev/null 2>&1; then
+                nowe=true
+                echo "Nowe dane po $i probach"
+                break
+              fi
+            fi
+            sleep 180
+          done
+          echo "nowe=$nowe" >> "$GITHUB_OUTPUT"
+          [ "$nowe" = "true" ] || echo "Brak nowych danych - pomijam"
 
-      - name: Walidacja pobranego pliku
+      - name: Wgraj nowe dane
+        if: steps.czekaj.outputs.nowe == 'true'
         run: |
-          if ! head -1 eurojackpot_nowy.csv | grep -q "^0001,"; then
-            echo "BLAD: plik nie zaczyna sie od danych CSV - przerywam"
-            head -5 eurojackpot_nowy.csv
-            exit 1
-          fi
-          if [ $(wc -l < eurojackpot_nowy.csv) -lt 900 ]; then
-            echo "BLAD: plik podejrzanie krotki - przerywam"
-            exit 1
-          fi
-          echo "Walidacja OK"
+          mv eurojackpot_nowy.csv eurojackpot.csv
 
-      - name: Porownaj i wgraj jesli nowe dane
-        run: |
-          if diff -q eurojackpot.csv eurojackpot_nowy.csv > /dev/null 2>&1; then
-            echo "Brak nowych danych - pomijam"
-          else
-            mv eurojackpot_nowy.csv eurojackpot.csv
+          echo "Przeliczam statystyki na stronach HTML..."
+          python3 update_eurojackpot_stats.py
 
-            echo "Przeliczam statystyki na stronach HTML..."
-            python3 update_eurojackpot_stats.py
-
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add eurojackpot.csv \
-              eurojackpot-statystyki.html eurojackpot-wyniki.html \
-              en/eurojackpot-statistics.html en/eurojackpot-results.html \
-              de/eurojackpot-statistiken.html de/eurojackpot-ergebnisse.html \
-              fr/eurojackpot-statistiques.html fr/eurojackpot-resultats.html \
-              it/statistiche-eurojackpot.html it/risultati-eurojackpot.html
-            git commit -m "Aktualizacja wynikow EuroJackpot $(date +%Y-%m-%d)"
-            git push
-            echo "Zaktualizowano!"
-          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add eurojackpot.csv \
+            eurojackpot-statystyki.html eurojackpot-wyniki.html \
+            en/eurojackpot-statistics.html en/eurojackpot-results.html \
+            de/eurojackpot-statistiken.html de/eurojackpot-ergebnisse.html \
+            fr/eurojackpot-statistiques.html fr/eurojackpot-resultats.html \
+            it/statistiche-eurojackpot.html it/risultati-eurojackpot.html
+          git commit -m "Aktualizacja wynikow EuroJackpot $(date +%Y-%m-%d)"
+          git push
+          echo "Zaktualizowano!"
