@@ -1,8 +1,9 @@
 name: Aktualizacja Powerball CSV
 
-# Zrodlo (data.ny.gov) dodaje nowe losowanie ok. 07:39 UTC dzien po losowaniu.
-# Zadanie startuje przed ta godzina i sprawdza zrodlo co 2 min, wiec wynik trafia
-# na GitHub kilka minut po publikacji. Drugi termin to zapas.
+# Start punktualny: zewnetrzny wyzwalacz (workflow_dispatch przez API) uruchamia zadanie tuz
+# przed publikacja wynikow; zadanie sprawdza zrodlo co minute i wgrywa wynik od razu.
+# Terminy z harmonogramu (schedule) to tylko zapas: GitHub spoznia je o godziny,
+# wiec robia jedno sprawdzenie i koncza (bez czekania).
 on:
   schedule:
     - cron: '25 7 * * 2,4,0'
@@ -16,7 +17,7 @@ concurrency:
 jobs:
   aktualizuj:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 110
     permissions:
       contents: write
     steps:
@@ -25,7 +26,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Czekaj na nowe dane (sprawdzaj co 2 min, do 90 min)
+      - name: Czekaj na nowe dane (co 1 min, do 90 min; z harmonogramu tylko jedno sprawdzenie)
         id: czekaj
         run: |
           cat > konwertuj.py <<'EOF'
@@ -56,7 +57,9 @@ jobs:
           EOF
 
           nowe=false
-          for i in $(seq 1 45); do
+          max=90
+          [ "$GITHUB_EVENT_NAME" = "schedule" ] && max=1
+          for i in $(seq 1 $max); do
             if curl -sL --fail --retry 2 \
                  -o powerball_surowe.csv \
                  "https://data.ny.gov/resource/d6yy-54nr.csv?\$limit=3000&\$order=draw_date%20ASC" \
@@ -69,7 +72,7 @@ jobs:
                 break
               fi
             fi
-            sleep 120
+            if [ $i -lt $max ]; then sleep 60; fi
           done
           rm -f konwertuj.py powerball_surowe.csv
           echo "nowe=$nowe" >> "$GITHUB_OUTPUT"

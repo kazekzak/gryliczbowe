@@ -1,8 +1,9 @@
 name: Aktualizacja Duzy Lotek CSV
 
-# Zadanie startuje przed publikacja wynikow i samo sprawdza zrodlo co 3 min,
-# wiec wynik trafia na GitHub kilka minut po publikacji (a nie kiedy GitHub
-# raczy uruchomic zadanie z harmonogramu). Drugi termin to zapas.
+# Start punktualny: zewnetrzny wyzwalacz (workflow_dispatch przez API) uruchamia zadanie tuz
+# przed publikacja wynikow; zadanie sprawdza zrodlo co minute i wgrywa wynik od razu.
+# Terminy z harmonogramu (schedule) to tylko zapas: GitHub spoznia je o godziny,
+# wiec robia jedno sprawdzenie i koncza (bez czekania).
 on:
   schedule:
     - cron: '50 19 * * 2,4,6'
@@ -16,7 +17,7 @@ concurrency:
 jobs:
   aktualizuj:
     runs-on: ubuntu-latest
-    timeout-minutes: 340
+    timeout-minutes: 200
     permissions:
       contents: write
     steps:
@@ -25,11 +26,13 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Czekaj na nowe dane (sprawdzaj co 3 min, do 5 godzin)
+      - name: Czekaj na nowe dane (co 1 min, do 3 godzin; z harmonogramu tylko jedno sprawdzenie)
         id: czekaj
         run: |
           nowe=false
-          for i in $(seq 1 100); do
+          max=180
+          [ "$GITHUB_EVENT_NAME" = "schedule" ] && max=1
+          for i in $(seq 1 $max); do
             if curl -sL --fail --retry 2 \
                  -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
                  -H "Accept: text/csv,text/plain,*/*" \
@@ -45,7 +48,7 @@ jobs:
                 break
               fi
             fi
-            sleep 180
+            if [ $i -lt $max ]; then sleep 60; fi
           done
           echo "nowe=$nowe" >> "$GITHUB_OUTPUT"
           [ "$nowe" = "true" ] || echo "Brak nowych danych - pomijam"
