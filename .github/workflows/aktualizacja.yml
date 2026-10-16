@@ -4,6 +4,10 @@ name: Aktualizacja EuroJackpot CSV
 # przed publikacja wynikow; zadanie sprawdza zrodlo co minute i wgrywa wynik od razu.
 # Terminy z harmonogramu (schedule) to tylko zapas: GitHub spoznia je o godziny,
 # wiec robia jedno sprawdzenie i koncza (bez czekania).
+#
+# Strony HTML ze statystykami sa przeliczane ZAWSZE z eurojackpot.csv z repozytorium
+# (krok 2), niezaleznie od tego, kto wgral CSV (to zadanie czy lokalny skrypt na PC).
+# Dzieki temu reczne wgranie samego CSV nie zostawia stron w tyle.
 on:
   schedule:
     - cron: '15 18 * * 2,5'
@@ -25,6 +29,26 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Przelicz strony ze statystykami z CSV w repozytorium
+        run: |
+          python3 update_eurojackpot_stats.py
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            eurojackpot-statystyki.html eurojackpot-wyniki.html \
+            en/eurojackpot-statistics.html en/eurojackpot-results.html \
+            de/eurojackpot-statistiken.html de/eurojackpot-ergebnisse.html \
+            fr/eurojackpot-statistiques.html fr/eurojackpot-resultats.html \
+            it/statistiche-eurojackpot.html it/risultati-eurojackpot.html
+          if git diff --cached --quiet; then
+            echo "Strony aktualne - bez zmian"
+          else
+            git commit -m "Odswiezenie statystyk EuroJackpot $(date +%Y-%m-%d)"
+            git push
+            echo "Strony odswiezone!"
+          fi
 
       - name: Czekaj na nowe dane (co 1 min, do 3 godzin; z harmonogramu tylko jedno sprawdzenie)
         id: czekaj
