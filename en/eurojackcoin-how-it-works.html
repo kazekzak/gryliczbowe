@@ -104,25 +104,19 @@
       decrease your own balance &mdash; so your mined/received coins are safe.
     </p>
 
-    <h3>&#128225; How to set up the network</h3>
+    <h3>&#128225; Connecting to the network</h3>
     <p>
-      <strong>On the same local network (same WiFi/router)</strong> &mdash; nothing to do. Just click
-      "Listen" on both computers, and the app will find the other one automatically.
+      <strong>No setup needed.</strong> Since version 0.15 the app connects on its own to a permanent
+      EuroJackCoin network server (built-in seed) and downloads the blockchain from it &mdash; also on
+      mobile internet (LTE) and behind a carrier router (CGNAT), with no port forwarding.
     </p>
     <p>
-      <strong>Outside the local network (different home, different internet)</strong> &mdash; automatic
-      discovery does NOT work (a physical limitation of this technology, not a setting to turn on). You need to:
+      Your transfers and mined blocks reach all other users through this server, with a delay of about
+      a minute at most.
     </p>
-    <ul>
-      <li>Find out the <strong>public IP address</strong> of that network &mdash; on that computer, just Google "what is my ip address". A local address from <code>ipconfig</code> (e.g. 192.168.x.x) is not enough &mdash; that number repeats in every home in the world.</li>
-      <li>Set up <strong>port forwarding</strong> on that network's router (Port Forwarding / Virtual Server / NAT) &mdash; the port the app listens on (1700 by default), pointed to that specific computer's local address.</li>
-      <li>Give that computer a <strong>fixed local address</strong> in the router, so the forwarding doesn't break after the address changes.</li>
-      <li>Only now can the other user add that public address as a <strong>Seed</strong> (Network tab) and use it to reach the rest of the network through it.</li>
-    </ul>
     <p>
-      <strong>Alternative without port forwarding:</strong> <em>ZeroTier</em> or <em>Hamachi</em> on both
-      computers &mdash; they create a shared virtual network, which works like being on the same WiFi,
-      with no router configuration needed.
+      <strong>Listen</strong> is only needed if you want others to connect to you directly (e.g. on the
+      same home network, or if you have a public IP address).
     </p>
   </section>
 

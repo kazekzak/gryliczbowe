@@ -107,26 +107,20 @@
       geminten/empfangenen M&#252;nzen sind also sicher.
     </p>
 
-    <h3>&#128225; Wie man das Netzwerk einrichtet</h3>
+    <h3>&#128225; Verbindung mit dem Netzwerk</h3>
     <p>
-      <strong>Im selben lokalen Netzwerk (gleiches WLAN/Router)</strong> &mdash; nichts zu tun. Einfach auf
-      beiden Computern auf "Zuh&#246;ren" klicken, und die App findet den anderen Computer von selbst.
+      <strong>Keine Einrichtung nötig.</strong> Seit Version 0.15 verbindet sich das Programm selbst mit
+      einem festen Server des EuroJackCoin-Netzwerks (integrierter Seed) und lädt die Blockchain von dort
+      &mdash; auch über mobiles Internet (LTE) und hinter dem Router des Anbieters (CGNAT), ohne
+      Portweiterleitung.
     </p>
     <p>
-      <strong>Au&#223;erhalb des lokalen Netzwerks (anderes Zuhause, anderes Internet)</strong> &mdash;
-      automatische Erkennung funktioniert NICHT (eine physische Einschr&#228;nkung dieser Technologie, keine
-      einschaltbare Einstellung). Man muss:
+      Deine Überweisungen und geschürften Blöcke erreichen über diesen Server alle anderen Nutzer, mit
+      höchstens etwa einer Minute Verzögerung.
     </p>
-    <ul>
-      <li>Die <strong>&#246;ffentliche IP-Adresse</strong> jenes Netzwerks herausfinden &mdash; auf jenem Computer reicht es, bei Google "wie lautet meine IP-Adresse" zu suchen. Eine lokale Adresse aus <code>ipconfig</code> (z. B. 192.168.x.x) reicht nicht &mdash; diese Nummer wiederholt sich in jedem Haushalt der Welt.</li>
-      <li><strong>Portweiterleitung</strong> auf dem Router jenes Netzwerks einrichten (Port Forwarding / Virtual Server / NAT) &mdash; der Port, auf dem die App lauscht (standardm&#228;&#223;ig 1700), gerichtet auf die lokale Adresse dieses konkreten Computers.</li>
-      <li>Diesem Computer eine <strong>feste lokale Adresse</strong> im Router zuweisen, damit die Weiterleitung nach einer Adress&#228;nderung nicht aufh&#246;rt zu funktionieren.</li>
-      <li>Erst jetzt kann der andere Nutzer diese &#246;ffentliche Adresse als <strong>Seed</strong> (Tab Netzwerk) hinzuf&#252;gen und &#252;ber sie den Rest des Netzwerks erreichen.</li>
-    </ul>
     <p>
-      <strong>Alternative ohne Portweiterleitung:</strong> <em>ZeroTier</em> oder <em>Hamachi</em> auf
-      beiden Computern &mdash; sie erstellen ein gemeinsames virtuelles Netzwerk, was so funktioniert, als
-      w&#228;re man im selben WLAN, ohne jegliche Router-Konfiguration.
+      <strong>Zuhören</strong> brauchst du nur, wenn sich andere direkt mit dir verbinden sollen (z. B. im
+      selben Heimnetz oder wenn du eine öffentliche IP-Adresse hast).
     </p>
   </section>
 

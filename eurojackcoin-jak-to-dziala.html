@@ -105,25 +105,19 @@
       wykopane/otrzymane monety s&#261; bezpieczne.
     </p>
 
-    <h3>&#128225; Jak skonfigurowa&#263; sie&#263;</h3>
+    <h3>&#128225; Jak połączyć się z siecią</h3>
     <p>
-      <strong>W tej samej sieci lokalnej (ten sam WiFi/router)</strong> &mdash; nic nie trzeba robi&#263;.
-      Wystarczy klikn&#261;&#263; "Nas&#322;uchuj" na obu komputerach, a apka znajdzie drugi komputer sama.
+      <strong>Nic nie trzeba konfigurować.</strong> Od wersji 0.15 program sam łączy się ze stałym serwerem
+      sieci EuroJackCoin (wbudowany seed) i pobiera z niego łańcuch bloków &mdash; także na internecie
+      mobilnym (LTE) i za routerem operatora (CGNAT), bez przekierowywania portów.
     </p>
     <p>
-      <strong>Spoza sieci lokalnej (inny dom, inny internet)</strong> &mdash; automatyczne wykrywanie NIE
-      dzia&#322;a (fizyczne ograniczenie tej technologii, nie ustawienie do w&#322;&#261;czenia). Trzeba:
+      Twoje przelewy i wykopane bloki trafiają przez ten serwer do wszystkich pozostałych użytkowników,
+      z opóźnieniem najwyżej około minuty.
     </p>
-    <ul>
-      <li>Pozna&#263; <strong>publiczny adres IP</strong> tamtej sieci &mdash; na tamtym komputerze wystarczy wyszuka&#263; w Google "jaki jest m&#243;j adres ip". Sam adres lokalny z <code>ipconfig</code> (np. 192.168.x.x) nie wystarczy &mdash; taki numer powtarza si&#281; w ka&#380;dym domu na &#347;wiecie.</li>
-      <li>Zrobi&#263; <strong>przekierowanie portu</strong> na routerze tamtej sieci (Port Forwarding / Virtual Server / NAT) &mdash; port, na kt&#243;rym apka nas&#322;uchuje (domy&#347;lnie 1700), skierowany na lokalny adres tego konkretnego komputera.</li>
-      <li>Ustawi&#263; temu komputerowi <strong>sta&#322;y lokalny adres</strong> w routerze, &#380;eby przekierowanie nie przesta&#322;o dzia&#322;a&#263; po zmianie adresu.</li>
-      <li>Dopiero teraz drugi u&#380;ytkownik mo&#380;e doda&#263; ten publiczny adres jako <strong>Seed</strong> (zak&#322;adka Sie&#263;) i przez niego wej&#347;&#263; do ca&#322;ej reszty sieci.</li>
-    </ul>
     <p>
-      <strong>Alternatywa bez przekierowywania port&#243;w:</strong> <em>ZeroTier</em> albo <em>Hamachi</em> na
-      obu komputerach &mdash; tworz&#261; wsp&#243;ln&#261; wirtualn&#261; sie&#263;, dzia&#322;a to jak bycie w tym
-      samym WiFi, bez &#380;adnej konfiguracji routera.
+      <strong>Nasłuchuj</strong> jest potrzebne tylko wtedy, gdy chcesz, żeby inni łączyli się z Tobą
+      bezpośrednio (np. w tej samej sieci domowej albo gdy masz publiczny adres IP).
     </p>
   </section>
 

@@ -106,26 +106,19 @@
       sono quindi al sicuro.
     </p>
 
-    <h3>&#128225; Come configurare la rete</h3>
+    <h3>&#128225; Connettersi alla rete</h3>
     <p>
-      <strong>Sulla stessa rete locale (stesso WiFi/router)</strong> &mdash; non c'&#232; nulla da fare.
-      Basta cliccare su "Ascolta" su entrambi i computer, e l'app trover&#224; l'altro computer da sola.
+      <strong>Nessuna configurazione necessaria.</strong> Dalla versione 0.15 il programma si collega da
+      solo a un server fisso della rete EuroJackCoin (seed integrato) e ne scarica la blockchain &mdash;
+      anche con internet mobile (LTE) e dietro il router dell'operatore (CGNAT), senza inoltro delle porte.
     </p>
     <p>
-      <strong>Al di fuori della rete locale (altra casa, altra connessione internet)</strong> &mdash; il
-      rilevamento automatico NON funziona (un limite fisico di questa tecnologia, non un'impostazione da
-      attivare). Bisogna:
+      I tuoi trasferimenti e i blocchi che mini arrivano a tutti gli altri utenti attraverso questo
+      server, con un ritardo di circa un minuto al massimo.
     </p>
-    <ul>
-      <li>Conoscere l'<strong>indirizzo IP pubblico</strong> di quella rete &mdash; su quel computer basta cercare su Google "qual &#232; il mio indirizzo ip". Il solo indirizzo locale ottenuto con <code>ipconfig</code> (es. 192.168.x.x) non basta &mdash; quel numero si ripete in ogni casa del mondo.</li>
-      <li>Effettuare un <strong>port forwarding</strong> sul router di quella rete (Port Forwarding / Virtual Server / NAT) &mdash; la porta su cui l'app &#232; in ascolto (1700 di default), indirizzata all'indirizzo locale di quel computer specifico.</li>
-      <li>Impostare a quel computer un <strong>indirizzo locale fisso</strong> nel router, affinch&#233; il forwarding non smetta di funzionare dopo un cambio di indirizzo.</li>
-      <li>Solo a questo punto l'altro utente pu&#242; aggiungere quell'indirizzo pubblico come <strong>Seed</strong> (scheda Rete) e usarlo per raggiungere il resto della rete.</li>
-    </ul>
     <p>
-      <strong>Alternativa senza port forwarding:</strong> <em>ZeroTier</em> o <em>Hamachi</em> su entrambi
-      i computer &mdash; creano una rete virtuale condivisa, che funziona come se si fosse sulla stessa
-      WiFi, senza alcuna configurazione del router.
+      <strong>Ascolta</strong> serve solo se vuoi che altri si colleghino direttamente a te (ad esempio
+      nella stessa rete di casa, o se hai un indirizzo IP pubblico).
     </p>
   </section>
 

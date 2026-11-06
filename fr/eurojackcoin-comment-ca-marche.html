@@ -106,27 +106,20 @@
       propre solde &mdash; vos pi&#232;ces min&#233;es/re&#231;ues sont donc en s&#233;curit&#233;.
     </p>
 
-    <h3>&#128225; Comment configurer le r&#233;seau</h3>
+    <h3>&#128225; Se connecter au réseau</h3>
     <p>
-      <strong>Sur le m&#234;me r&#233;seau local (m&#234;me WiFi/routeur)</strong> &mdash; rien &#224; faire.
-      Il suffit de cliquer sur "&#201;couter" sur les deux ordinateurs, et l'application trouvera l'autre
-      ordinateur toute seule.
+      <strong>Aucune configuration nécessaire.</strong> Depuis la version 0.15, l'application se connecte
+      seule à un serveur permanent du réseau EuroJackCoin (seed intégré) et y télécharge la blockchain
+      &mdash; aussi sur Internet mobile (LTE) et derrière le routeur de l'opérateur (CGNAT), sans
+      redirection de port.
     </p>
     <p>
-      <strong>En dehors du r&#233;seau local (autre domicile, autre internet)</strong> &mdash; la
-      d&#233;tection automatique NE fonctionne PAS (une limitation physique de cette technologie, pas un
-      param&#232;tre &#224; activer). Il faut :
+      Vos virements et les blocs que vous minez parviennent à tous les autres utilisateurs via ce serveur,
+      avec un délai d'environ une minute au maximum.
     </p>
-    <ul>
-      <li>Conna&#238;tre l'<strong>adresse IP publique</strong> de ce r&#233;seau &mdash; sur cet ordinateur, il suffit de rechercher sur Google "quelle est mon adresse ip". Une adresse locale obtenue avec <code>ipconfig</code> (ex. 192.168.x.x) ne suffit pas &mdash; ce num&#233;ro se r&#233;p&#232;te dans chaque foyer du monde.</li>
-      <li>Faire une <strong>redirection de port</strong> sur le routeur de ce r&#233;seau (Port Forwarding / Virtual Server / NAT) &mdash; le port sur lequel l'application &#233;coute (1700 par d&#233;faut), dirig&#233; vers l'adresse locale de cet ordinateur en particulier.</li>
-      <li>D&#233;finir une <strong>adresse locale fixe</strong> pour cet ordinateur dans le routeur, pour que la redirection ne cesse pas de fonctionner apr&#232;s un changement d'adresse.</li>
-      <li>Ce n'est qu'&#224; ce moment que l'autre utilisateur peut ajouter cette adresse publique comme <strong>Seed</strong> (onglet R&#233;seau) et l'utiliser pour acc&#233;der au reste du r&#233;seau.</li>
-    </ul>
     <p>
-      <strong>Alternative sans redirection de port :</strong> <em>ZeroTier</em> ou <em>Hamachi</em> sur les
-      deux ordinateurs &mdash; ils cr&#233;ent un r&#233;seau virtuel partag&#233;, ce qui fonctionne comme
-      si vous &#233;tiez sur le m&#234;me WiFi, sans aucune configuration de routeur.
+      <strong>Écouter</strong> n'est nécessaire que si vous voulez que d'autres se connectent directement à
+      vous (par exemple sur le même réseau domestique, ou si vous avez une adresse IP publique).
     </p>
   </section>
 
