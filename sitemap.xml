@@ -108,4 +108,24 @@
     <loc>https://gryliczbowe.com/it/guida-eurojackpot.html</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://gryliczbowe.com/poradnik.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gryliczbowe.com/de/anleitungen.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gryliczbowe.com/en/guides.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gryliczbowe.com/fr/guides.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gryliczbowe.com/it/guide.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
