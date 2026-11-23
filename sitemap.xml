@@ -88,4 +88,24 @@
   <url><loc>https://gryliczbowe.com/it/powerball.html</loc><priority>0.6</priority></url>
   <url><loc>https://gryliczbowe.com/it/eurojackcoin.html</loc><priority>0.6</priority></url>
   <url><loc>https://gryliczbowe.com/it/eurojackcoin-come-funziona.html</loc><priority>0.5</priority></url>
+  <url>
+    <loc>https://gryliczbowe.com/eurojackpot-poradnik.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gryliczbowe.com/de/eurojackpot-anleitung.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gryliczbowe.com/en/eurojackpot-guide.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gryliczbowe.com/fr/eurojackpot-guide.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gryliczbowe.com/it/guida-eurojackpot.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
