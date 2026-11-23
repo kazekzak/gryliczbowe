@@ -99,7 +99,7 @@ table.wyniki td { vertical-align: top; }
       <tbody>
       <tr><td>Centrato o Mancato</td><td>generatore di serie in 5 modalit&#224;</td></tr>
       <tr><td>Numeri personali</td><td>scegli tu i numeri, li salvi e li analizzi</td></tr>
-      <tr><td>Numeri sicuri</td><td>imponi i tuoi numeri preferiti, il resto lo completa l'app</td></tr>
+      <tr><td>Numeri preferiti</td><td>imponi i tuoi numeri preferiti, il resto lo completa l'app</td></tr>
       <tr><td>Gioco sistema</td><td>sistema pieno o ridotto con 6&#8211;10 numeri</td></tr>
       <tr><td>Broker stat.</td><td>5 profili di &#171;broker&#187; statistico</td></tr>
       <tr><td>Le mie giocate</td><td>giocate salvate, non ancora acquistate</td></tr>
@@ -138,7 +138,7 @@ table.wyniki td { vertical-align: top; }
     <h3>Sequenze</h3>
     <p>Scegli un numero. L'app trova le estrazioni in cui &#232; uscito e controlla quali numeri sono usciti nell'estrazione <strong>immediatamente successiva</strong>. Mostra i 20 pi&#249; frequenti: quante volte e in quale percentuale. Per confronto: nel puro caso ogni numero principale esce in circa il 10% delle estrazioni (5/50) e un numero Euro in circa il 16,7% (2/12, dal 2022). L'estrazione pi&#249; recente non viene contata, perch&#233; non ha ancora una successiva.</p>
     <h3>Analisi incrociata</h3>
-    <p>Combini due analisi: <strong>A</strong> e <strong>B</strong> (Caldi, Freddi, In ritardo, Tendenze &#8593;, Tendenze &#8595;). L'app mostra tre insiemi: l'<strong>intersezione</strong>, <strong>solo A</strong> e <strong>solo B</strong>. &#200; una semplice operazione tra insiemi, senza punteggi. Da ogni insieme puoi creare una giocata con il pulsante &#171;GENERA&#187; (scelta a caso tra i numeri dell'insieme). Attenzione: in questa schermata &#171;In ritardo&#187; indica un numero il cui ritardo ha superato la sua distanza media (almeno 5 estrazioni), e gli intervalli 50/100/200 usano una finestra doppia, perch&#233; vengono confrontate le estrazioni &#171;ultime&#187; e &#171;precedenti&#187;.</p>
+    <p>Combini due analisi: <strong>A</strong> e <strong>B</strong> (Caldi, Freddi, In ritardo, Tendenze &#8593;, Tendenze &#8595;). L'app mostra tre insiemi: l'<strong>intersezione</strong>, <strong>solo A</strong> e <strong>solo B</strong>. &#200; una semplice operazione tra insiemi, senza punteggi. Da ogni insieme puoi creare una giocata con il pulsante &#171;GENERA&#187; (scelta a caso tra i numeri dell'insieme). Attenzione: in questa schermata &#171;In ritardo&#187; indica un numero il cui ritardo ha superato la sua distanza media (almeno 5 estrazioni), e gli intervalli 50/100/200 usano una finestra doppia, perch&#233; vengono confrontate le estrazioni &#171;ultime&#187; e &#171;precedenti&#187;; per questo l'intestazione mostra ad es. &#171;50+50 estrazioni&#187;.</p>
     <h3>Somme dei numeri</h3>
     <p>Per ogni estrazione viene calcolata la somma dei 5 numeri principali. La schermata mostra minimo, massimo, media, mediana, l'istogramma a intervalli di 10 (ad es. 120&#8211;129) e le 15 somme pi&#249; frequenti. L'intervallo evidenziato comprende i valori dal 20&#176; all'80&#176; percentile, cio&#232; circa il <strong>60% centrale</strong> delle estrazioni. Per confronto: la media della somma di 5 numeri su 50 &#232; 127,5.</p>
     <h3>Analisi struttura</h3>
@@ -163,8 +163,19 @@ table.wyniki td { vertical-align: top; }
     </ul>
     <p>Nota: la descrizione di &#171;FREDDI&#187; nell'app dice &#171;numeri non estratti da lungo tempo&#187;, ma in realt&#224; vengono calcolate le <strong>frequenze basse nella finestra</strong>. &#171;IN RITARDO&#187; &#232; un metodo a parte, basato sul tempo trascorso dall'ultima uscita.</p>
     <h3>Numeri personali</h3>
-    <p>Scegli 5 numeri principali e 2 Euro, salvi la giocata oppure tocchi &#171;Analizza&#187; (salva la giocata e mostra come sarebbe andata in tutta la storia).</p>
-    <h3>Numeri sicuri</h3>
+    <p>Scegli numeri principali ed Euro, salvi la giocata oppure tocchi &#171;Analizza&#187;. <strong>&#171;Analizza&#187; non salva nulla.</strong> Con una giocata completa (5 numeri principali + 2 Euro) mostra come sarebbe andata in tutta la storia. Con una selezione pi&#249; piccola (ad es. 3 numeri principali + 1 Euro) apre un'analisi separata dei tuoi numeri (descritta sotto).</p>
+    <h3>Analisi dei tuoi numeri (selezione parziale)</h3>
+    <p>Seleziona un insieme qualsiasi (ad es. 3 numeri principali e 1 Euro) e tocca &#171;Analizza&#187;. Nell'analisi rientrano <strong>solo le configurazioni vincenti</strong>, cio&#232; quelle che all'EuroJackpot vincono un premio &#8211; i 12 livelli di premio: 5+2, 5+1, 5+0, 4+2, 4+1, 4+0, 3+2, 2+2, 3+1, 3+0, 1+2 e 2+1 (il primo numero indica i numeri principali, il secondo gli Euro). Una configurazione come 2+0 non vince nulla, perci&#242; l'app mostra un messaggio che non rientra nell'analisi.</p>
+    <p>La schermata mostra:</p>
+    <ul>
+      <li><strong>Insieme nella stessa estrazione</strong> &#8211; quante volte tutti i numeri scelti sono usciti insieme, l'ultima volta e, per confronto, quante volte ce lo si aspetterebbe per puro caso.</li>
+      <li><strong>Ogni numero singolarmente</strong> &#8211; in quante estrazioni &#232; uscito e l'ultima volta. Per gli Euro contano solo le estrazioni in cui il numero poteva uscire, perch&#233; il range degli Euro &#232; cambiato (1&#8211;8, dal 10.10.2014 1&#8211;10, dal 25.03.2022 1&#8211;12).</li>
+      <li><strong>Combinazioni dei tuoi numeri</strong> &#8211; righe raggruppate per livello di premio, dal pi&#249; alto (ad es. &#171;4+1 &#183; quattro numeri + un numero Euro&#187;). Una riga &#232; una configurazione: le palline dei numeri principali, eventualmente gli Euro, e il numero di estrazioni in cui &#232; uscita. Le righe con un risultato maggiore di zero sono cliccabili &#8211; aprono l'elenco delle estrazioni con le date e gli intervalli tra di esse.</li>
+      <li><strong>Compagni pi&#249; frequenti</strong> &#8211; i numeri usciti pi&#249; spesso nelle estrazioni con tutta la tua combinazione (con un campione piccolo ha poco valore).</li>
+      <li><strong>Estrazioni con questa combinazione</strong> &#8211; l'elenco delle estrazioni, oppure l'indicazione che la combinazione non &#232; mai uscita per intero.</li>
+    </ul>
+    <p>Questa &#232; solo la descrizione della storia: le estrazioni sono indipendenti, nessun metodo aumenta le probabilit&#224; di vincita e il fatto che una combinazione sia uscita una volta o mai non dice nulla sulla prossima estrazione.</p>
+    <h3>Numeri preferiti</h3>
     <p>Segni fino a 4 numeri principali e 1 Euro che devono essere presenti in ogni serie. Il resto lo completa l'app: <strong>a caso</strong>, <strong>tra i 10 numeri pi&#249; caldi</strong> oppure <strong>tra i 10 pi&#249; freddi</strong> nella finestra scelta (per gli Euro: 5). Scegli la finestra (50 / 100 / 200 / 500 / tutte) e il numero di giocate (1 / 3 / 5 / 10 / 20). Nella versione gratuita sono disponibili la finestra 50 e 1 o 3 giocate; finestre pi&#249; grandi e pi&#249; giocate sono <strong>Premium</strong>.</p>
     <h3>Gioco sistema</h3>
     <p>Scegli 6&#8211;10 numeri principali e 2 Euro. Il <strong>sistema pieno</strong> comprende tutte le combinazioni di 5 numeri tra i tuoi n (6 numeri = 6 giocate, 7 = 21, 8 = 56, 9 = 126, 10 = 252). Il <strong>sistema ridotto</strong> prende pi&#249; o meno una combinazione ogni tre dell'elenco (8 numeri = 18 giocate, 9 = 42, 10 = 84). &#200; un semplice campione uniforme, <strong>non un sistema con garanzia di vincita</strong>. Tutte le combinazioni ricevono gli stessi 2 numeri Euro.</p>
@@ -244,12 +255,12 @@ table.wyniki td { vertical-align: top; }
       <li>niente pubblicit&#224;,</li>
       <li>salvataggio delle giocate senza limiti (nella versione gratuita puoi avere salvate <strong>al massimo 20</strong> giocate),</li>
       <li>eliminazione delle giocate salvate,</li>
-      <li>pi&#249; serie alla volta nei generatori e finestre di analisi pi&#249; lunghe in Numeri sicuri,</li>
+      <li>pi&#249; serie alla volta nei generatori e finestre di analisi pi&#249; lunghe in Numeri preferiti,</li>
       <li>la schermata &#171;Backtest contro giocatori casuali&#187;.</li>
     </ul>
     <p><strong>Cosa funziona gratis:</strong> tutta la scheda ANALISI, Broker stat., Gioco sistema, Numeri personali, Scanner schedina, Monte Carlo, Test storico, Analisi predittiva, Backtest, i confronti dalla schermata &#171;estrazioni&#187; e il caricamento del database integrato. Nella versione gratuita ci sono anche gli annunci pubblicitari.</p>
     <p>Il <strong>limite di 20 giocate</strong> riguarda le giocate salvate e non ancora inviate. Le giocate aggiunte con lo scanner finiscono subito in &#171;Giocate inviate&#187;, quindi non occupano questo limite. Senza Premium non si possono eliminare le giocate, quindi i posti occupati dalle giocate salvate non si possono liberare.</p>
-    <p><strong>Dove incontri Premium:</strong> le serie da 5 / 10 / 20 in Centrato o Mancato; finestre pi&#249; grandi e pi&#249; giocate in Numeri sicuri; l'eliminazione in &#171;Le mie giocate&#187; e &#171;Giocate inviate&#187; e il pulsante del biglietto; &#171;Scarica nuovi&#187; nell'aggiornamento del database; l'intera schermata &#171;Backtest vs casuali&#187;.</p>
+    <p><strong>Dove incontri Premium:</strong> le serie da 5 / 10 / 20 in Centrato o Mancato; finestre pi&#249; grandi e pi&#249; giocate in Numeri preferiti; l'eliminazione in &#171;Le mie giocate&#187; e &#171;Giocate inviate&#187; e il pulsante del biglietto; &#171;Scarica nuovi&#187; nell'aggiornamento del database; l'intera schermata &#171;Backtest vs casuali&#187;.</p>
   </section>
 
   <section id="s8">

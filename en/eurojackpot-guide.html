@@ -99,7 +99,7 @@ table.wyniki td { vertical-align: top; }
       <tbody>
       <tr><td>Hit or Miss</td><td>a set generator with 5 modes</td></tr>
       <tr><td>Custom numbers</td><td>you pick the numbers yourself, save and analyze them</td></tr>
-      <tr><td>Sure picks</td><td>you force your favorite numbers, the app fills in the rest</td></tr>
+      <tr><td>Favorite numbers</td><td>you force your favorite numbers, the app fills in the rest</td></tr>
       <tr><td>System play</td><td>full or short system from 6&#8211;10 numbers</td></tr>
       <tr><td>Stat. broker</td><td>5 statistical &#8220;broker&#8221; profiles</td></tr>
       <tr><td>My bets</td><td>saved bets that have not been bought yet</td></tr>
@@ -138,7 +138,7 @@ table.wyniki td { vertical-align: top; }
     <h3>Sequences</h3>
     <p>You choose one number. The app finds the draws in which it was drawn and checks which numbers were drawn in the draw <strong>immediately after</strong> each of them. It shows the 20 most frequent: how many times and what percentage. For comparison: with pure chance, each main number is drawn in about 10% of draws (5/50), and each Euro number in about 16.7% (2/12, since 2022). The newest draw is not counted, because it does not have a following draw yet.</p>
     <h3>Cross analysis</h3>
-    <p>You combine two analyses: <strong>A</strong> and <strong>B</strong> (Hot, Cold, Overdue, Trends &#8593;, Trends &#8595;). The app shows three sets: the <strong>intersection</strong>, <strong>only A</strong> and <strong>only B</strong>. It is plain set arithmetic, with no scoring. From each set you can make a bet with the &#8220;Generate&#8221; button (a random draw from the pool). Note: &#8220;overdue&#8221; on this screen means a number whose overdue count has exceeded its own average gap (at least 5 draws), and the 50/100/200 ranges use a double window, because the &#8220;last&#8221; and &#8220;previous&#8221; draws are compared.</p>
+    <p>You combine two analyses: <strong>A</strong> and <strong>B</strong> (Hot, Cold, Overdue, Trends &#8593;, Trends &#8595;). The app shows three sets: the <strong>intersection</strong>, <strong>only A</strong> and <strong>only B</strong>. It is plain set arithmetic, with no scoring. From each set you can make a bet with the &#8220;Generate&#8221; button (a random draw from the pool). Note: &#8220;overdue&#8221; on this screen means a number whose overdue count has exceeded its own average gap (at least 5 draws), and the 50/100/200 ranges use a double window, because the &#8220;last&#8221; and &#8220;previous&#8221; draws are compared; that is why the header shows e.g. &#8220;50+50 draws&#8221;.</p>
     <h3>Number sums</h3>
     <p>For each draw, the sum of the 5 main numbers is calculated. The screen shows the minimum, maximum, average, median, a histogram in steps of 10 (e.g. 120&#8211;129) and the 15 most common sums. The marked range is the values from the 20th to the 80th percentile, i.e. roughly <strong>the middle 60%</strong> of draws. For comparison: the average sum of 5 numbers out of 50 is 127.5.</p>
     <h3>Structure analysis</h3>
@@ -163,8 +163,19 @@ table.wyniki td { vertical-align: top; }
     </ul>
     <p>Note: the description of &#8220;cold&#8221; in the app says &#8220;numbers that haven't been drawn for a long time&#8221;, but what is actually counted is <strong>low frequency in the window</strong>. &#8220;Overdue&#8221; is a separate method, based on the time since the last appearance.</p>
     <h3>Custom numbers</h3>
-    <p>You choose 5 main numbers and 2 Euro numbers, and then you save the bet or tap &#8220;Analyze&#8221; (it saves the bet and shows how it would have done in the whole history).</p>
-    <h3>Sure picks</h3>
+    <p>You choose main numbers and Euro numbers, and then you save the bet or tap &#8220;Analyze&#8221;. <strong>&#8220;Analyze&#8221; does not save anything.</strong> With a complete bet (5 main + 2 Euro) it shows how it would have done in the whole history. With a smaller selection (e.g. 3 main numbers + 1 Euro) it opens a separate analysis of your numbers (described below).</p>
+    <h3>Analysis of your numbers (partial selection)</h3>
+    <p>Select any set (e.g. 3 main numbers and 1 Euro) and tap &#8220;Analyze&#8221;. Only <strong>prize-paying layouts</strong> are included in the analysis, that is, those that win a prize in EuroJackpot &#8211; the 12 prize tiers: 5+2, 5+1, 5+0, 4+2, 4+1, 4+0, 3+2, 2+2, 3+1, 3+0, 1+2 and 2+1 (the first number is main numbers, the second is Euro). A layout such as 2+0 wins nothing, so the app shows a message that it is not included in the analysis.</p>
+    <p>The screen shows:</p>
+    <ul>
+      <li><strong>Together in one draw</strong> &#8211; how many times all selected numbers were drawn together, when last, and, for comparison, how many times you would expect that by pure chance.</li>
+      <li><strong>Each number separately</strong> &#8211; in how many draws it appeared and when last. For Euro numbers only the draws in which the number could be drawn are counted, because the Euro pool changed over time (1&#8211;8, from 10.10.2014 1&#8211;10, from 25.03.2022 1&#8211;12).</li>
+      <li><strong>Combinations of your numbers</strong> &#8211; lines grouped by prize tier, from the highest (e.g. &#8220;4+1 &#183; four numbers + one euro&#8221;). A line is one layout: balls of the main numbers, possibly Euro, and the number of draws in which it came out. Lines with a result above zero are clickable &#8211; they open the list of draws with dates and the gaps between them.</li>
+      <li><strong>Most frequent companions</strong> &#8211; numbers drawn most often in draws containing your whole combination (with a small sample this has little value).</li>
+      <li><strong>Draws with this combination</strong> &#8211; the list of draws, or a note that the combination has never been drawn in full.</li>
+    </ul>
+    <p>This only describes history: draws are independent, no method increases your chance of winning, and the fact that a combination came out once or never says nothing about the next draw.</p>
+    <h3>Favorite numbers</h3>
     <p>You mark up to 4 main numbers and 1 Euro number that should be in every set. The app fills in the rest: <strong>randomly</strong>, <strong>from the 10 hottest</strong> or <strong>the 10 coldest</strong> numbers in the chosen window (for Euro: 5). You choose the window (50 / 100 / 200 / 500 / all) and the number of bets (1 / 3 / 5 / 10 / 20). In the free version, the window of 50 and 1 or 3 bets are available; bigger windows and more bets are <strong>Premium</strong>.</p>
     <h3>System play</h3>
     <p>You choose 6&#8211;10 main numbers and 2 Euro numbers. A <strong>full system</strong> is all combinations of 5 numbers from your n (6 numbers = 6 bets, 7 = 21, 8 = 56, 9 = 126, 10 = 252). A <strong>short system</strong> takes roughly every third combination from the list (8 numbers = 18 bets, 9 = 42, 10 = 84). It is just an even sample, and <strong>not a system with guaranteed hits</strong>. All combinations get the same 2 Euro numbers.</p>
@@ -244,12 +255,12 @@ table.wyniki td { vertical-align: top; }
       <li>no ads,</li>
       <li>saving bets without a limit (in the free version you can have <strong>at most 20</strong> saved bets),</li>
       <li>deleting saved bets,</li>
-      <li>more sets at once in the generators and longer analysis windows in Sure picks,</li>
+      <li>more sets at once in the generators and longer analysis windows in Favorite numbers,</li>
       <li>the &#8220;Backtest vs random players&#8221; screen.</li>
     </ul>
     <p><strong>What works for free:</strong> the whole ANALYSIS tab, Stat. broker, System play, Custom numbers, Coupon scanner, Monte Carlo, Historical test, Predictive analysis, Backtest, the comparisons from the &#8220;draws&#8221; screen and loading the built-in database. The free version also shows ads.</p>
     <p><strong>The limit of 20 bets</strong> applies to saved bets that have not been sent yet. Bets added by the scanner go straight to &#8220;Sent bets&#8221;, so they do not count toward this limit. Without Premium you cannot delete bets, so the slots taken by saved bets cannot be freed up.</p>
-    <p><strong>Where you will meet Premium:</strong> sets of 5 / 10 / 20 in Hit or Miss; bigger windows and more bets in Sure picks; deleting in &#8220;My bets&#8221; and &#8220;Sent bets&#8221; and the ticket button; &#8220;Download new&#8221; in the database update; the whole &#8220;Backtest vs random&#8221; screen.</p>
+    <p><strong>Where you will meet Premium:</strong> sets of 5 / 10 / 20 in Hit or Miss; bigger windows and more bets in Favorite numbers; deleting in &#8220;My bets&#8221; and &#8220;Sent bets&#8221; and the ticket button; &#8220;Download new&#8221; in the database update; the whole &#8220;Backtest vs random&#8221; screen.</p>
   </section>
 
   <section id="s8">
